@@ -1,0 +1,28 @@
+  <%
+    function formattedDate(foundDate){
+      foundDate = (foundDate.getMonth() + 1) + '/' + foundDate.getDate() + '/' +  foundDate.getFullYear();
+      return foundDate;
+    }
+  %>
+
+  <div class="">
+    <% if(noMatch !== null) { %>
+      <h4><%= noMatch %> </h4>
+      <% } %>
+  </div>
+  
+  <div class="listings">
+    <% properties.forEach(function(property, index){ %>
+      <%
+      if(property.image){
+        var imageString = property.image;
+        //remove slashes
+        imageString= imageString.replace(/\\/g, "\/");
+        //remove public folder
+        imageString = imageString.replace("public", "");
+      }
+      %>
+        <%  var url = "https://floating-peak-65788.herokuapp.com"+ imageString ; %>
+        <img src="<%= url %>" alt="">
+      <% }); %>
+  </div>

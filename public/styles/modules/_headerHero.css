@@ -1,0 +1,12 @@
+.headerHero{
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+
+  img{
+    grid-column: 1/2;
+    grid-row: 1/2;
+    height: 80vh;
+    width: 85%;
+  }
+}

@@ -1,0 +1,52 @@
+<% include partials/header %>
+<% include partials/loggedin %>
+<% include partials/navbar %>
+
+<div class="headerHero">
+  <img src="/images/hero_1.jpg" alt="" class="image_height">
+  <img src="/images/hero_2.jpg" alt="" class="image_height">
+</div>
+  <form class="" action="/properties" method="GET">
+    <% include home/filters %>
+    <% include home/searchbar %>
+  </form>
+  <div class="getStarted">
+    <div class="getStarted_text"> <b>Need Help Finding REALTOR?</b> Browse thousands of local realtors.</div>
+    <div class="btn">Get Started</div>
+  </div>
+  <div class="section-title">
+    <h2>Latest Living Room Posts</h2>
+  </div>
+  <div class="latestPost">
+    <div class="">
+      <img src="/images/living_room1.jpg" alt="">
+      <div class="">
+        <p><b> April, 13</b></p>
+        <p>“Shelfies:” Why It’s So Hard to Get Rid of Our Favourite Books</p>
+      </div>
+    </div>
+    <div class="">
+      <img src="/images/living_room3.jpg" alt="">
+      <div class="">
+        <p><b> April, 11</b></p>
+        <p>You Can Stay in this Hotel Room that Looks Like a Giant Wine Barrel</p>
+      </div>
+    </div>
+    <div class="">
+      <img src="/images/living_room2.jpg" alt="">
+      <div class="">
+        <p> <b> April, 09</b></p>
+        <p>A Slice of Canadian Cottage Country: Kawartha Lakes, Ontario</p>
+      </div>
+    </div>
+  </div>
+  <div class="section-title">
+    <div class="btn btn-post">More Posts</div>
+  </div>
+  <div class="keyRoles">
+    <% include home/keyroles %>
+  </div>
+  <div class="keyRoles">
+    <% include home/learnmore %>
+  </div>
+  <% include partials/footer %>

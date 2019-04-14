@@ -1,0 +1,31 @@
+.currentBlock{
+  display: block;
+}
+
+.blockHidden{
+  display: none;
+}
+
+.warning{
+  display: none;
+}
+
+.feature-tab__links--2 li{
+  display: inline-block;
+}
+.currentLink{
+  border-bottom: 2px #da291c solid;
+  font-weight: bold;
+}
+
+.tabPanel{
+  display: none;
+}
+
+.currentContent{
+  display: block;
+}
+
+.setFront{
+  z-index: 2;
+}
