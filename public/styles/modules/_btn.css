@@ -9,10 +9,19 @@
   font-size: 1rem;
   font-weight: bolder;
   text-align: center;
+  cursor: pointer;
+  a{
+    color:#000;
+    text-decoration: none;
+  }
 
   &-post{
       background-color: #23a1c0;
-      color: #fff;
       padding: .8rem 1.9rem;
+
+      a{
+        color: #fff;
+        text-decoration: none;
+      }
   }
 }

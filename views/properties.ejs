@@ -1,17 +1,15 @@
+<% include partials/header %>
+<% include partials/loggedin %>
+<% include partials/navbar %>
+
   <%
     function formattedDate(foundDate){
       foundDate = (foundDate.getMonth() + 1) + '/' + foundDate.getDate() + '/' +  foundDate.getFullYear();
       return foundDate;
     }
   %>
-
-  <div class="">
-    <% if(noMatch !== null) { %>
-      <h4><%= noMatch %> </h4>
-      <% } %>
-  </div>
-  
-  <div class="listings">
+<div class="properties">
+  <div class="row">
     <% properties.forEach(function(property, index){ %>
       <%
       if(property.image){
@@ -22,7 +20,31 @@
         imageString = imageString.replace("public", "");
       }
       %>
-        <%  var url = "https://floating-peak-65788.herokuapp.com"+ imageString ; %>
-        <img src="<%= url %>" alt="">
+        <%  var url ="https://floating-peak-65788.herokuapp.com" + imageString ; %>
+
+          <div class="card col-sm-4 card_style" style="width: 12rem;">
+            <img class="card-img-top" src="<%= url %>" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title"><%= property.exteriortype %></h5>
+              <small class=""> <strong> <%= property.city %> <b>|</b> <%= property.stname %> <b>|</b> <%= property.community %></strong> </small>
+            </div>
+            <ul class="list-group list-group-flush">
+              <small> <li class="list-group-item"><b>Listed Price: </b> Tk.<%= property.listprice %>/= <br> <b>  Possession Date: </b> <%= formattedDate(property.possessiondate) %>
+                    <br>  <b>Expiry Date: </b> <%= formattedDate(property.expirydate) %> <br> <b> Holdover Days: </b> <%= property.holdoverdays %> </li> </small>
+            </ul>
+            <div class="card-body">
+              <a href="#" class="card-link">Details</a>
+              <a href="#" class="card-link">Gallery</a>
+              <a href="#" class="card-link">Contact a Realtor</a>
+            </div>
+          </div>
       <% }); %>
   </div>
+  <div class="properties_error">
+    <% if(noMatch !== null) { %>
+      <h4><%= noMatch %> </h4>
+      <% } %>
+  </div>
+</div>
+
+<% include partials/footer %>

@@ -228,6 +228,9 @@ table td {
     background-color: #d0191d;
   }
 }
+.list-group-item{
+  text-align: left;
+}
 
 /* will be separated */
 
@@ -243,4 +246,34 @@ table td {
   margin-left: auto;
   margin-right: auto;
   margin-top: 5rem;
+}
+
+/* will be separated */
+
+.properties{
+  max-width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+}
+.properties_error{
+    text-align: center;
+}
+.row{
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.card_style{
+  margin: .5rem;
+  max-width:31.3%;
+  img{
+    height: 180px;
+    margin: auto;
+  }
+}
+.realtor_image{
+width: 270px;
+ height: 270px !important;
+ border-radius: 50%;
 }

@@ -29,6 +29,7 @@ var infoRoutes = require("./routes/info");  */
 
 var homeRoutes = require("./routes/index");
 var propertiesRoutes = require("./routes/properties");
+var bdrealtorsRoutes = require("./routes/bdrealtors");
 
 //mongoose.connect("mongodb://mls_app:543TWOone@ds035693.mlab.com:35693/mls", { useNewUrlParser: true });
 
@@ -82,6 +83,7 @@ app.use(infoRoutes); */
 
 app.use(homeRoutes);
 app.use(propertiesRoutes);
+app.use(bdrealtorsRoutes);
 
 app.listen(process.env.PORT || 5000, function(){
   console.log("server connection successful");

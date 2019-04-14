@@ -1,4 +1,4 @@
-let tabLinks = document.querySelectorAll('.tabPanels .tabPanel');
+let tabLinks = document.querySelectorAll('.tabPanel');
 let tabContents = document.querySelectorAll('.image_height');
 let tabImages = document.querySelectorAll('.image_height');
 
