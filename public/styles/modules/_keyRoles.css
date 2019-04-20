@@ -1,0 +1,152 @@
+.keyRoles{
+  max-width: 85%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.keyRoles_slider1{
+  background-color: #426377;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  div{
+      padding: 1rem;
+    img{
+      width: 300px;
+      height: 300px;
+      border: 3px solid #fff;
+    }
+  }
+}
+.keyRoles_slider2{
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  background-color: #ccc;
+  div{
+      padding: 1rem;
+    img{
+      width: 300px;
+      height: 300px;
+      border: 3px solid #000;
+    }
+  }
+}
+.paragraph1{
+  margin: 0 2rem;
+  font-size: 1rem;
+  font-family: 'Raleway', sans-serif;
+  color: #fff;
+}
+
+.title1{
+  margin: 0 2rem;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #fff;
+}
+.point1{
+    margin: 0 2rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+}
+.paragraph2{
+  margin: 0 2rem;
+  font-size: 1rem;
+  font-family: 'Raleway', sans-serif;
+  color: #000;
+}
+
+.title2{
+  margin: 0 2rem;
+  font-size: 2rem;
+  font-weight: 600;
+    color: #000;
+}
+.point2{
+    margin: 0 2rem;
+    font-size: 1rem;
+    font-weight: 700;
+      color: #000;
+}
+
+/* For small screens like mobile */
+@media all and (max-width: 767px) and (min-width: 200px) {
+  .keyRoles{
+    max-width: 100%;
+  }
+  .keyRoles_slider1, .keyRoles_slider2{
+    grid-template-columns: 1fr;
+    div{
+        padding: .7rem;
+      img{
+        width: 0;
+        height: 0;
+        border-radius: 0;
+        border: none;
+      }
+    }
+  }
+  .title1 , .title2 {
+    margin: 0 .5rem;
+    font-size: 1rem;
+  }
+
+  .point1 , .point2{
+    margin: 0 .5rem;
+    font-size: .8rem;
+  }
+
+  .paragraph2 , .paragraph1{
+    margin: 0 .5rem;
+    font-size: .8rem;
+    font-weight: bold;
+  }
+}
+
+/* For medium screens like iPad */
+@media all and (max-width: 1020px) and (min-width: 768px) {
+  .keyRoles{
+    max-width: 100%;
+  }
+  .keyRoles_slider1, .keyRoles_slider2{
+    grid-template-columns: 1fr;
+    div{
+        padding: .7rem;
+      img{
+        width: 0;
+        height: 0;
+        border-radius: 0;
+        border: none;
+      }
+    }
+  }
+  .title1 , .title2 {
+    margin: 0 .5rem;
+    font-size: 1rem;
+  }
+
+  .point1 , .point2{
+    margin: 0 .5rem;
+    font-size: .8rem;
+  }
+
+  .paragraph2 , .paragraph1{
+    margin: 0 .5rem;
+    font-size: .8rem;
+    font-weight: bold;
+  }
+}
+/* For regular Laptop and desktop screens*/
+@media all and (max-width: 1920px) and (min-width: 1021px) {
+  .keyRoles{
+    max-width: 100%;
+  }
+  .paragraph2 , .paragraph1{
+    margin: 0 .9rem;
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 1.3rem;
+    letter-spacing: .1rem;
+  }
+}

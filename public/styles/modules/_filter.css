@@ -1,0 +1,43 @@
+.filterNav{
+  width: auto;
+  padding: .9rem;
+  background: #fff;
+  max-width: 100%;
+  border: 2px solid #fff;
+  border-radius: 50px;
+  position: absolute;
+  right: 2%;
+  top: 51%;
+  text-align: center;
+  z-index: 10;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* For small screens like mobile */
+@media all and (max-width: 767px) and (min-width: 200px) {
+  .filterNav{
+    padding: .3rem .9rem;
+    top: 42%;
+    font-size: .5rem;
+    border: .5px solid #fff;
+  }
+}
+
+/* For medium screens like iPad */
+@media all and (max-width: 1023px) and (min-width: 768px) {
+  .filterNav{
+    padding: .3rem .9rem;
+    top: 58%;
+    font-size: .7rem;
+  }
+}
+/* For regular Laptop and desktop screens*/
+@media all and (max-width: 1400px) and (min-width: 1024px) {
+  .filterNav{
+    padding: .3rem .9rem;
+    right: 5%;
+    top: 56%;
+    font-size: .9rem;
+  }
+}

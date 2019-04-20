@@ -356,6 +356,7 @@ html , body{
   font-family: 'Raleway', sans-serif;
   margin: 0;
   background-color: #f0f5f5;
+  overflow-x: hidden;
 }
 
 li{
@@ -427,139 +428,9 @@ table td {
 
 /* will be separated */
 
-.getStarted{
-  max-width: 85%;
-  margin-left: auto;
-  margin-right: auto;
-  display: grid;
-  grid-template-columns: 5fr 1fr;
-  background-color: #156073;
-}
-
-.getStarted_text{
-    margin-top: 1.1rem;
-    color: #fff;
-    margin-right: 1rem;
-    font-size: 1.3rem;
-  }
-
 /* will be separated */
 
-.latestPost{
-  max-width: 85%;
-  height: auto;
-  margin-left: auto;
-  margin-right: auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-}
-
-.latestPost div{
-    padding: 0 1rem;
-  }
-
-.latestPost div div{
-        border: 1px solid #ddd;
-      }
-
-.latestPost div div div span{
-            padding-left: .5rem;
-            padding-top: .5rem;
-            color: #000;
-            font-weight: bolder;
-            font-family: 'Raleway', sans-serif;
-          }
-
-.latestPost div img{
-        display: block;
-        height: 180px;
-        width: 100%;
-      }
-
 /* will be separated */
-
-.keyRoles{
-  max-width: 85%;
-  height: auto;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.keyRoles_slider1{
-  background-color: #426377;
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-}
-
-.keyRoles_slider1 div{
-      padding: 1rem;
-  }
-
-.keyRoles_slider1 div img{
-      width: 300px;
-      height: 300px;
-      border-radius: 50%;
-      border: 3px solid #fff;
-    }
-
-.keyRoles_slider2{
-  display: grid;
-  grid-template-columns: 3fr 1fr;
-  background-color: #ccc;
-}
-
-.keyRoles_slider2 div{
-      padding: 1rem;
-  }
-
-.keyRoles_slider2 div img{
-      width: 300px;
-      height: 300px;
-      border-radius: 50%;
-      border: 3px solid #000;
-    }
-
-.paragraph1{
-  margin: 0 2rem;
-  font-size: 1rem;
-  font-family: 'Raleway', sans-serif;
-  color: #fff;
-}
-
-.title1{
-  margin: 0 2rem;
-  font-size: 2rem;
-  font-weight: 600;
-  color: #fff;
-}
-
-.point1{
-    margin: 0 2rem;
-    font-size: 1rem;
-    font-weight: 700;
-    color: #fff;
-}
-
-.paragraph2{
-  margin: 0 2rem;
-  font-size: 1rem;
-  font-family: 'Raleway', sans-serif;
-  color: #000;
-}
-
-.title2{
-  margin: 0 2rem;
-  font-size: 2rem;
-  font-weight: 600;
-    color: #000;
-}
-
-.point2{
-    margin: 0 2rem;
-    font-size: 1rem;
-    font-weight: 700;
-      color: #000;
-}
 
 .center_button{
   text-align: center;
@@ -586,8 +457,12 @@ table td {
   opacity: .3;
 }
 
+.carousel-indicators{
+  opacity: .5;
+}
+
 .carousel-indicators li{
-    background-color: #d0191d;
+    background-color: #444;
   }
 
 .list-group-item{
@@ -595,21 +470,6 @@ table td {
 }
 
 /* will be separated */
-
-.learnmore_slider{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  height: 40vh;
-}
-
-.learnmore_text{
-  font-size: 2rem;
-  text-align: center;
-  max-width: 50%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 5rem;
-}
 
 /* will be separated */
 
@@ -644,6 +504,81 @@ table td {
 width: 270px;
  height: 270px !important;
  border-radius: 50%;
+}
+
+.tabPanels{
+  position: relative;
+  margin-left: 5rem;
+}
+
+.tabPanels input{
+    display: inline-block;
+    border: none;
+    padding: .5rem 2rem;
+    margin: 0;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out,
+                -webkit-transform 150ms ease;
+    transition: background 250ms ease-in-out,
+                transform 150ms ease;
+    transition: background 250ms ease-in-out,
+                transform 150ms ease,
+                -webkit-transform 150ms ease;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+    border-radius: 3px 3px 0 0;
+  }
+
+.tabPanels input:hover,
+  .tabPanels input:focus {
+      background: #0053ba;
+      border: none;
+  }
+
+.tabPanels input:focus {
+      outline-offset: -4px;
+      border: none;
+  }
+
+.tabPanels input:active {
+      -webkit-transform: scale(0.99);
+              transform: scale(0.99);
+      border: none;
+  }
+
+.tabPanel_res{
+  background-color: rgba(0,0,0,.6);
+}
+
+.tabPanel_com{
+  background-color:  #23a1c0;
+}
+
+/* For small screens like mobile */
+
+@media all and (max-width: 767px) and (min-width: 200px) {
+  .tabPanels{
+    margin-left: 1rem;
+  }
+    .tabPanels input{
+      padding: .3rem .7rem;
+      font-size: .8rem;
+    }
+}
+
+/* For medium screens like iPad */
+
+@media all and (max-width: 1020px) and (min-width: 768px) {
+/* same as the largest screen*/
+}
+
+/* For regular Laptop and desktop screens*/
+
+@media all and (max-width: 1920px) and (min-width: 1021px) {
+/* same as the largest screen*/
 }
 
 /*Grid layout areas*/
@@ -725,45 +660,6 @@ width: 270px;
       font-size: 1.3rem;
     }
 
-.navbar{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    border-bottom:3px #eee solid;
-    position: relative;
-    max-width: 85%;
-    margin: auto;
-    background-color: #fff;
-    z-index: 15;
-    padding: 1rem 0;
-  }
-
-.navbar div{
-      text-align: center;
-      border-left: 1px solid #999;
-      border-right: 1px solid #999;
-    }
-
-.navbar div span a:link, .navbar div span a:visited {
-            color: #000;
-            font-weight: bolder;
-            text-align: center;
-            text-decoration: none;
-          }
-
-.navbar div span a:hover, .navbar div span a:active {
-            color: red;
-        }
-
-.navbar div:nth-of-type(1){
-      border-left: 0;
-      border-right: 0;
-    }
-
-.navbar div:nth-of-type(5){
-      border-left: 0;
-      border-right: 0;
-    }
-
 .subHeader{
       display: none;
       }
@@ -823,6 +719,33 @@ width: 270px;
     width: 85%;
   }
 
+/* For small screens like mobile */
+
+@media all and (max-width: 767px) and (min-width: 200px) {
+    .headerHero img{
+      height: 50vh;
+      width: 100%;
+    }
+}
+
+/* For medium screens like iPad */
+
+@media all and (max-width: 1020px) and (min-width: 768px) {
+    .headerHero img{
+      height: 65vh;
+      width: 100%;
+    }
+}
+
+/* For regular Laptop and desktop screens*/
+
+@media all and (max-width: 1920px) and (min-width: 1021px) {
+    .headerHero img{
+      height: 75vh;
+      width: 100%;
+    }
+}
+
 .placeOrder{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -831,6 +754,7 @@ width: 270px;
 }
 
 .footerLinks{
+  padding-top: 2rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr ;
   background-color: #4f485a;
@@ -873,6 +797,62 @@ width: 270px;
   font-weight: 500;
 }
 
+/* For small screens like mobile */
+
+@media all and (max-width: 767px) and (min-width: 200px) {
+  .footerLinks{
+    padding-top: 1rem;
+    max-width: 100%;
+  }
+        .footerLinks div ol li{
+          margin: -.5rem 0;
+          text-align: left;
+        }
+          .footerLinks div ol li a{
+            font-size: .6rem;
+            font-weight: 400;
+          }
+  .cp-text_box{
+    max-width: 100%;
+    font-size: .7rem;
+  }
+  .cp-text{
+    font-size: .7rem;
+  }
+
+}
+
+/* For medium screens like iPad */
+
+@media all and (max-width: 1020px) and (min-width: 768px) {
+  .footerLinks{
+    padding-top: 1rem;
+    max-width: 100%;
+  }
+          .footerLinks div ol li a{
+            font-size:.8rem;
+            font-weight: 400;
+          }
+  .cp-text_box{
+    max-width: 100%;
+  }
+}
+
+/* For regular Laptop and desktop screens*/
+
+@media all and (max-width: 1920px) and (min-width: 1021px) {
+  .footerLinks{
+    max-width: 100%;
+  }
+          .footerLinks div ol li a{
+            font-size: 1rem;
+            font-weight: 400;
+          }
+  .cp-text_box{
+    max-width: 100%;
+  }
+}
+
 .section-title{
   text-align: center;
   margin: 15px auto;
@@ -881,72 +861,72 @@ width: 270px;
   font-family: 'Raleway', sans-serif;
   font-weight: 400;
   font-size-adjust: 100%;
-  font-size: 1.2rem;
+  font-size: 2.2rem;
 }
 
-@media only screen and (min-width:768px) {
+/* For small screens like mobile */
+
+@media all and (max-width: 767px) and (min-width: 200px) {
   .section-title{
+    margin: 15px auto;
+    letter-spacing: 0.05em;
     font-size: 1.3rem;
   }
 }
 
+/* For medium screens like iPad */
+
+@media all and (max-width: 1020px) and (min-width: 768px) {
+  .section-title{
+    font-size: 1.8rem;
+  }
+}
+
+/* For regular Laptop and desktop screens*/
+
+@media all and (max-width: 1920px) and (min-width: 1021px) {
+/* same as the largest screen*/
+}
+
 .modal1{
   position: absolute;
+  top: 0;
   z-index: 20;
-  top:5;
-  bottom: 3%;
-  left: 0;
-  right: 0;
   opacity: 0;
-  max-width: 56%;
-  background-color: #fff;
   visibility: hidden;
-  margin: 1rem auto;
 }
 
 .modal1-visible{
   opacity: .94;
   visibility: visible;
   position: absolute;
-  top:62%;
-  right: 10%;
+  top:60%;
+  right: 30%;
   border-radius: 5px;
+  width: 60%;
+  background-color: #fff;
 }
 
-.modal1-visible div{
-    max-height: auto;
-    border-radius: 5px;
-    line-height: inherit;
-    max-width: 80%;
-  }
-
-.modal1-visible div div{
-      display: inline;
+.modal1-visible ol li{
+      display: inline-block;
     }
 
 .modal1 button{
   position: absolute;
   top: 0;
+  right: 0;
+  width: 30px;
   border: none;
-  background-color: #777;
-  font-size: 2rem;
+  background-color: #d0191d;
+  font-size: 3rem;
   font-weight: bolder;
   color: #fff;
-  -webkit-transform: scaleX(1.4);
-          transform: scaleX(1.4);
+  -webkit-transform: scaleX(1.5);
+          transform: scaleX(1.5);
   -webkit-transform-origin: 100% 0;
           transform-origin: 100% 0;
   cursor: pointer;
   border-radius: 0  0 5px 5px;
-}
-
-.modal1 button:nth-of-type(1){
-  right: 0;
-  font-size: 2rem;
-}
-
-.modal1 button:nth-of-type(2){
-  right: 8%;
 }
 
 .modal-close{
@@ -954,16 +934,71 @@ width: 270px;
   visibility: hidden;
 }
 
-@media only screen and (min-width: 768px) {
-    .modal1-visible div{
-      max-width: 40%;
-      font-size: .8em;
-    }
-}
-
 .footerLinks-modal__link{
   font-size: 1rem;
   font-weight: bolder;
+}
+
+/* For small screens like mobile */
+
+@media all and (max-width: 767px) and (min-width: 200px) {
+  .footerLinks-modal__link{
+    font-size: .7rem;
+  }
+
+  .modal1-visible{
+    top: 47%;
+    right: 2%;
+    width: 96%;
+  }
+      .modal1-visible ol li{
+        display:block;
+        text-align: left;
+        margin-bottom: -1rem;
+        font-size: .8rem;
+      }
+  .modal1 button{
+    width: 20px;
+    font-size: 1.5rem;
+  }
+}
+
+/* For medium screens like iPad */
+
+@media all and (max-width: 1023px) and (min-width: 768px) {
+  .footerLinks-modal__link{
+    font-size: .7rem;
+  }
+
+  .modal1-visible{
+    top:64%;
+    right: 2%;
+    width: 96%;
+  }
+      .modal1-visible ol li{
+        text-align: left;
+        margin-bottom: -1rem;
+        font-size: .8rem;
+      }
+  .modal1 button{
+    width: 20px;
+    font-size: 1.5rem;
+  }
+}
+
+/* For regular Laptop and desktop screens*/
+
+@media all and (max-width: 1600px) and (min-width: 1024px) {
+  .modal1-visible{
+    top:64%;
+    right: 2%;
+    width:92%;
+  }
+      .modal1-visible ol li{
+        text-align: left;
+        margin-bottom: -1rem;
+        font-size: .8rem;
+      }
 }
 
 .new_1{
@@ -1332,62 +1367,11 @@ width: 270px;
   font-size: .9rem;
 }
 
-.tabPanels{
-  position: relative;
-  margin-left: 5rem;
-}
-
-.tabPanels input{
-    display: inline-block;
-    border: none;
-    padding: .5rem 2rem;
-    margin: 0;
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 1rem;
-    cursor: pointer;
-    text-align: center;
-    transition: background 250ms ease-in-out,
-                -webkit-transform 150ms ease;
-    transition: background 250ms ease-in-out,
-                transform 150ms ease;
-    transition: background 250ms ease-in-out,
-                transform 150ms ease,
-                -webkit-transform 150ms ease;
-    box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
-    border-radius: 3px 3px 0 0;
-  }
-
-.tabPanels input:hover,
-  .tabPanels input:focus {
-      background: #0053ba;
-      border: none;
-  }
-
-.tabPanels input:focus {
-      outline-offset: -4px;
-      border: none;
-  }
-
-.tabPanels input:active {
-      -webkit-transform: scale(0.99);
-              transform: scale(0.99);
-      border: none;
-  }
-
-.tabPanel_res{
-  background-color: rgba(0,0,0,.6);
-}
-
-.tabPanel_com{
-  background-color:  #23a1c0;
-}
-
 .search_box{
-  width: 60%;
+  width: 70%;
   max-width: 100%;
   position: absolute;
-  left: 15%;
+  left: 5%;
   top: 45%;
   z-index: 10;
 }
@@ -1395,13 +1379,13 @@ width: 270px;
 .search_1{
   background: #fff;
   max-width: 100%;
-  padding: 1rem;
   border: 2px solid #fff;
   border-radius: 50px;
   }
 
 .search_1 div{
     display: inline-block;
+    padding: .8rem .5rem;
     }
 
 .search_1 div select{
@@ -1417,6 +1401,7 @@ width: 270px;
         margin: 0;
         border: none;
         box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+        width:200px;
       }
 
 .search_1 div input{
@@ -1425,7 +1410,7 @@ width: 270px;
         font-family: sans-serif;
         font-weight: 700;
         color: #444;
-        line-height: 1.3;
+        line-height: 1;
         width: 100%;
         max-width: 100%;
         padding: .6em .4em .5em .4em;
@@ -1435,8 +1420,8 @@ width: 270px;
 
 .search_1 div:nth-of-type(5){
       position: absolute;
-      right: .2%;
-      top: 33%;
+      right: -1%;
+      top: 22%;
     }
 
 .search_1 div:nth-of-type(5) button{
@@ -1445,26 +1430,83 @@ width: 270px;
         color: #fff;
         padding: 16px;
         margin: 0;
-        width: 70px;
-        height: 70px;
+        width: 65px;
+        height: 65px;
         box-sizing: border-box;
         transition: .3s;
         border-radius: 50%;
       }
 
-.filterNav{
-    width: 10%;
-    padding: .9rem;
-    background: #fff;
-    max-width: 100%;
-    border: 2px solid #fff;
-    border-radius: 50px;
-    position: absolute;
-    right: 13%;
-    top: 51%;
-    text-align: center;
-    z-index: 10;
-    cursor: pointer;
+/* For small screens like mobile */
+
+@media all and (max-width: 767px) and (min-width: 200px) {
+    .search_box{
+      width: 98%;
+      left: 1%;
+      top: 30%;
+    }
+    .search_1{
+      padding: .3rem .5rem;
+      }
+      .search_1 div{
+          padding: 0;
+        }
+          .search_1 div select{
+            font-size: .8rem;
+            line-height: .6;
+            width: 60px;
+          }
+            .search_1 div select option{
+              font-size: .8rem;
+            }
+        .search_1 div:nth-of-type(5){
+          position: relative;
+          float: right;
+          margin-top: -.28rem;
+          margin-right: -.4rem;
+        }
+          .search_1 div:nth-of-type(5) button{
+            padding: 1.2px;
+            margin: 0;
+            width: 40px;
+            height: 40px;
+            font-size: .5rem;
+          }
+  }
+
+/* For medium screens like iPad */
+
+@media all and (max-width: 1020px) and (min-width: 768px) {
+    .search_box{
+      width: 98%;
+      left: 1%;
+      top: 40%;
+    }
+    .search_1{
+      padding: .3rem .5rem;
+      }
+      .search_1 div{
+          padding: .4rem .5rem;
+        }
+          .search_1 div select{
+            font-size: 1.2rem;
+            width: 120px;
+          }
+        .search_1 div:nth-of-type(5){
+          position: relative;
+          float: right;
+          margin-top: -.6rem;
+          margin-right: -.4rem;
+        }
+  }
+
+/* For regular Laptop and desktop screens*/
+
+@media all and (max-width: 1320px) and (min-width: 1021px) {
+    .search_box{
+      width: 90%;
+      top: 40%;
+    }
   }
 
 .btn{
@@ -1474,7 +1516,7 @@ width: 270px;
   display: inline-block;
   padding: .8rem 1.9rem;
   border-radius: 50px;
-  margin: .5rem 1rem .5rem 0;
+  margin: .6rem 1rem .5rem 0;
   font-size: 1rem;
   font-weight: bolder;
   text-align: center;
@@ -1495,3 +1537,516 @@ width: 270px;
         color: #fff;
         text-decoration: none;
       }
+
+/* For small screens like mobile */
+
+@media all and (max-width: 767px) and (min-width: 200px) {
+  .btn{
+    padding: .2rem .5rem;
+    border-radius: 50px;
+    font-size: .6rem;
+  }
+}
+
+/* For medium screens like iPad */
+
+@media all and (max-width: 1020px) and (min-width: 768px) {
+  .btn{
+    padding: .3rem .7rem;
+    border-radius: 50px;
+    font-size: .8rem;
+  }
+}
+
+/* For regular Laptop and desktop screens*/
+
+@media all and (max-width: 1920px) and (min-width: 1021px) {
+  .btn{
+    padding: .5rem 1rem;
+    border-radius: 50px;
+    font-size: 1rem;
+  }
+}
+
+.navbar{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  border-bottom:3px #eee solid;
+  position: relative;
+  max-width: 85%;
+  margin: auto;
+  background-color: #fff;
+  z-index: 15;
+  padding: 1rem 0;
+}
+
+.navbar div{
+    text-align: center;
+    border-left: 1px solid #999;
+    border-right: 1px solid #999;
+  }
+
+.navbar div span a:link, .navbar div span a:visited {
+          color: #000;
+          font-weight: bolder;
+          text-align: center;
+          text-decoration: none;
+        }
+
+.navbar div span a:hover, .navbar div span a:active {
+          color: red;
+      }
+
+.navbar div:nth-of-type(1){
+    border-left: 0;
+    border-right: 0;
+  }
+
+.navbar div:nth-of-type(4){
+    border-left: 0;
+    border-right: 0;
+  }
+
+/* For small screens like mobile */
+
+@media all and (max-width: 767px) and (min-width: 200px) {
+  .navbar{
+    max-width: 100%;
+    padding: .5rem 0;
+  }
+
+    .navbar div{
+      font-size: .65rem;
+    }
+}
+
+/* For medium screens like iPad */
+
+@media all and (max-width: 1020px) and (min-width: 768px) {
+  .navbar{
+    max-width: 100%;
+    padding: .5rem 0;
+  }
+}
+
+/* For regular Laptop and desktop screens*/
+
+@media all and (max-width: 1920px) and (min-width: 1021px) {
+  .navbar{
+    max-width: 100%;
+  }
+}
+
+.getStarted{
+  max-width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: .5fr 5fr 1fr;
+  background-color: #156073;
+}
+
+.getStarted_text{
+    margin-top: 1.1rem;
+    color: #fff;
+    font-size: 1.3rem;
+    margin-bottom: auto;
+  }
+
+/* For small screens like mobile */
+
+@media all and (max-width: 767px) and (min-width: 200px) {
+  .getStarted{
+    grid-template-columns: .2fr 5fr 1fr;
+    max-width: 100%;
+  }
+  .getStarted_text{
+    margin-top: .8rem;
+    font-size: .9rem;
+    margin-bottom: .5rem;
+  }
+}
+
+/* For medium screens like iPad */
+
+@media all and (max-width: 1020px) and (min-width: 768px) {
+  .getStarted{
+  max-width: 100%;
+  }
+  .getStarted_text{
+    margin-top: .8rem;
+    font-size: 1rem;
+  }
+}
+
+/* For regular Laptop and desktop screens*/
+
+@media all and (max-width: 1920px) and (min-width: 1021px) {
+  .getStarted{
+  max-width: 100%;
+  }
+}
+
+.latestPost{
+  max-width: 85%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.latestPost div{
+    padding: 0 1rem;
+  }
+
+.latestPost div div{
+        border: 1px solid #ddd;
+      }
+
+.latestPost div div p{
+          padding-left: .5rem;
+          padding-top: .5rem;
+          color: #000;
+          font-family: 'Raleway', sans-serif;
+          font-size: 1rem;
+        }
+
+.latestPost div img{
+        display: block;
+        height: 180px;
+        width: 100%;
+      }
+
+/* For small screens like mobile */
+
+@media all and (max-width: 767px) and (min-width: 200px) {
+  .latestPost{
+    max-width: 100%;
+  }
+    .latestPost div{
+      padding: 0 .2rem;
+    }
+        .latestPost div div{
+          border: 1px solid #ddd;
+        }
+          .latestPost div div p{
+            font-size: .7rem;
+            padding-left: .2rem;
+            padding-top: .2rem;
+          }
+        .latestPost div img{
+          height: 100px;
+          width: 100%;
+        }
+}
+
+/* For medium screens like iPad */
+
+@media all and (max-width: 1020px) and (min-width: 768px) {
+  .latestPost{
+    max-width: 94%;
+  }
+    .latestPost div{
+      padding: 0 .2rem;
+    }
+        .latestPost div div{
+          border: 1px solid #ddd;
+        }
+          .latestPost div div p{
+            font-size: .9rem;
+            padding-left: .2rem;
+            padding-top: .2rem;
+          }
+        .latestPost div img{
+          height: 140px;
+          width: 100%;
+        }
+}
+
+/* For regular Laptop and desktop screens*/
+
+@media all and (max-width: 1920px) and (min-width: 1021px) {
+/* same as largest screen */
+}
+
+.keyRoles{
+  max-width: 85%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.keyRoles_slider1{
+  background-color: #426377;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
+.keyRoles_slider1 div{
+      padding: 1rem;
+  }
+
+.keyRoles_slider1 div img{
+      width: 300px;
+      height: 300px;
+      border: 3px solid #fff;
+    }
+
+.keyRoles_slider2{
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  background-color: #ccc;
+}
+
+.keyRoles_slider2 div{
+      padding: 1rem;
+  }
+
+.keyRoles_slider2 div img{
+      width: 300px;
+      height: 300px;
+      border: 3px solid #000;
+    }
+
+.paragraph1{
+  margin: 0 2rem;
+  font-size: 1rem;
+  font-family: 'Raleway', sans-serif;
+  color: #fff;
+}
+
+.title1{
+  margin: 0 2rem;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.point1{
+    margin: 0 2rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.paragraph2{
+  margin: 0 2rem;
+  font-size: 1rem;
+  font-family: 'Raleway', sans-serif;
+  color: #000;
+}
+
+.title2{
+  margin: 0 2rem;
+  font-size: 2rem;
+  font-weight: 600;
+    color: #000;
+}
+
+.point2{
+    margin: 0 2rem;
+    font-size: 1rem;
+    font-weight: 700;
+      color: #000;
+}
+
+/* For small screens like mobile */
+
+@media all and (max-width: 767px) and (min-width: 200px) {
+  .keyRoles{
+    max-width: 100%;
+  }
+  .keyRoles_slider1, .keyRoles_slider2{
+    grid-template-columns: 1fr;
+  }
+    .keyRoles_slider1 div,.keyRoles_slider2 div{
+        padding: .7rem;
+    }
+      .keyRoles_slider1 div img,.keyRoles_slider2 div img{
+        width: 0;
+        height: 0;
+        border-radius: 0;
+        border: none;
+      }
+  .title1 , .title2 {
+    margin: 0 .5rem;
+    font-size: 1rem;
+  }
+
+  .point1 , .point2{
+    margin: 0 .5rem;
+    font-size: .8rem;
+  }
+
+  .paragraph2 , .paragraph1{
+    margin: 0 .5rem;
+    font-size: .8rem;
+    font-weight: bold;
+  }
+}
+
+/* For medium screens like iPad */
+
+@media all and (max-width: 1020px) and (min-width: 768px) {
+  .keyRoles{
+    max-width: 100%;
+  }
+  .keyRoles_slider1, .keyRoles_slider2{
+    grid-template-columns: 1fr;
+  }
+    .keyRoles_slider1 div,.keyRoles_slider2 div{
+        padding: .7rem;
+    }
+      .keyRoles_slider1 div img,.keyRoles_slider2 div img{
+        width: 0;
+        height: 0;
+        border-radius: 0;
+        border: none;
+      }
+  .title1 , .title2 {
+    margin: 0 .5rem;
+    font-size: 1rem;
+  }
+
+  .point1 , .point2{
+    margin: 0 .5rem;
+    font-size: .8rem;
+  }
+
+  .paragraph2 , .paragraph1{
+    margin: 0 .5rem;
+    font-size: .8rem;
+    font-weight: bold;
+  }
+}
+
+/* For regular Laptop and desktop screens*/
+
+@media all and (max-width: 1920px) and (min-width: 1021px) {
+  .keyRoles{
+    max-width: 100%;
+  }
+  .paragraph2 , .paragraph1{
+    margin: 0 .9rem;
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 1.3rem;
+    letter-spacing: .1rem;
+  }
+}
+
+.learnmore{
+  padding: .5rem 0 0 0;
+  max-width: 85%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.learnmore_slider{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 40vh;
+}
+
+.learnmore_text{
+  font-size: 2rem;
+  text-align: center;
+  max-width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5rem;
+  font-weight: bolder;
+}
+
+/* For small screens like mobile */
+
+@media all and (max-width: 767px) and (min-width: 200px) {
+  .learnmore{
+    max-width: 100%;
+  }
+  .learnmore_slider{
+    height: auto;
+  }
+  .learnmore_text{
+    max-width: 80%;
+    font-size: .9rem;
+    margin-top: 1rem;
+  }
+}
+
+/* For medium screens like iPad */
+
+@media all and (max-width: 1020px) and (min-width: 768px) {
+  .learnmore{
+    max-width: 100%;
+  }
+  .learnmore_slider{
+    height: auto;
+  }
+  .learnmore_text{
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    max-width: 70%;
+  }
+}
+
+/* For regular Laptop and desktop screens*/
+
+@media all and (max-width: 1920px) and (min-width: 1021px) {
+  .learnmore{
+    max-width: 100%;
+  }
+  .learnmore_slider{
+    height: auto;
+  }
+}
+
+.filterNav{
+  width: auto;
+  padding: .9rem;
+  background: #fff;
+  max-width: 100%;
+  border: 2px solid #fff;
+  border-radius: 50px;
+  position: absolute;
+  right: 2%;
+  top: 51%;
+  text-align: center;
+  z-index: 10;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* For small screens like mobile */
+
+@media all and (max-width: 767px) and (min-width: 200px) {
+  .filterNav{
+    padding: .3rem .9rem;
+    top: 42%;
+    font-size: .5rem;
+    border: .5px solid #fff;
+  }
+}
+
+/* For medium screens like iPad */
+
+@media all and (max-width: 1023px) and (min-width: 768px) {
+  .filterNav{
+    padding: .3rem .9rem;
+    top: 58%;
+    font-size: .7rem;
+  }
+}
+
+/* For regular Laptop and desktop screens*/
+
+@media all and (max-width: 1400px) and (min-width: 1024px) {
+  .filterNav{
+    padding: .3rem .9rem;
+    right: 5%;
+    top: 56%;
+    font-size: .9rem;
+  }
+}

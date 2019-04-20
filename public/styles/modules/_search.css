@@ -1,49 +1,8 @@
-.tabPanels{
-  position: relative;
-  margin-left: 5rem;
-  input{
-    display: inline-block;
-    border: none;
-    padding: .5rem 2rem;
-    margin: 0;
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 1rem;
-    cursor: pointer;
-    text-align: center;
-    transition: background 250ms ease-in-out,
-                transform 150ms ease;
-    box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
-    border-radius: 3px 3px 0 0;
-  }
-  input:hover,
-  input:focus {
-      background: #0053ba;
-      border: none;
-  }
-
-  input:focus {
-      outline-offset: -4px;
-      border: none;
-  }
-
-  input:active {
-      transform: scale(0.99);
-      border: none;
-  }
-}
-
-.tabPanel_res{
-  background-color: rgba(0,0,0,.6);
-}
-.tabPanel_com{
-  background-color:  #23a1c0;
-}
 .search_box{
   width: 70%;
   max-width: 100%;
   position: absolute;
-  left: 15%;
+  left: 5%;
   top: 45%;
   z-index: 10;
 }
@@ -55,6 +14,7 @@
   border-radius: 50px;
   div{
     display: inline-block;
+    padding: .8rem .5rem;
       select{
         display: block;
         font-size: 16px;
@@ -68,6 +28,7 @@
         margin: 0;
         border: none;
         box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+        width:200px;
       }
       input{
         display: block;
@@ -85,16 +46,16 @@
     }
     div:nth-of-type(5){
       position: absolute;
-      right: .2%;
-      top: 33%;
+      right: -1%;
+      top: 22%;
       button{
         border: none;
         background-color:#94ca60; ;
         color: #fff;
         padding: 16px;
         margin: 0;
-        width: 70px;
-        height: 70px;
+        width: 65px;
+        height: 65px;
         box-sizing: border-box;
         transition: .3s;
         border-radius: 50%;
@@ -102,17 +63,70 @@
     }
   }
 
-  .filterNav{
-    width: 10%;
-    padding: .9rem;
-    background: #fff;
-    max-width: 100%;
-    border: 2px solid #fff;
-    border-radius: 50px;
-    position: absolute;
-    right: 13%;
-    top: 51%;
-    text-align: center;
-    z-index: 10;
-    cursor: pointer;
+  /* For small screens like mobile */
+  @media all and (max-width: 767px) and (min-width: 200px) {
+    .search_box{
+      width: 98%;
+      left: 1%;
+      top: 30%;
+    }
+    .search_1{
+      padding: .3rem .5rem;
+      div{
+          padding: 0;
+          select{
+            font-size: .8rem;
+            line-height: .6;
+            width: 60px;
+            option{
+              font-size: .8rem;
+            }
+          }
+        }
+        div:nth-of-type(5){
+          position: relative;
+          float: right;
+          margin-top: -.28rem;
+          margin-right: -.4rem;
+          button{
+            padding: 1.2px;
+            margin: 0;
+            width: 40px;
+            height: 40px;
+            font-size: .5rem;
+          }
+        }
+      }
+  }
+
+  /* For medium screens like iPad */
+  @media all and (max-width: 1020px) and (min-width: 768px) {
+    .search_box{
+      width: 98%;
+      left: 1%;
+      top: 40%;
+    }
+    .search_1{
+      padding: .3rem .5rem;
+      div{
+          padding: .4rem .5rem;
+          select{
+            font-size: 1.2rem;
+            width: 120px;
+          }
+        }
+        div:nth-of-type(5){
+          position: relative;
+          float: right;
+          margin-top: -.6rem;
+          margin-right: -.4rem;
+        }
+      }
+  }
+  /* For regular Laptop and desktop screens*/
+  @media all and (max-width: 1320px) and (min-width: 1021px) {
+    .search_box{
+      width: 90%;
+      top: 40%;
+    }
   }

@@ -1,0 +1,61 @@
+.navbar{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  border-bottom:3px #eee solid;
+  position: relative;
+  max-width: 85%;
+  margin: auto;
+  background-color: #fff;
+  z-index: 15;
+  padding: 1rem 0;
+
+  div{
+    text-align: center;
+    border-left: 1px solid #999;
+    border-right: 1px solid #999;
+    span{
+        a:link, a:visited {
+          color: #000;
+          font-weight: bolder;
+          text-align: center;
+          text-decoration: none;
+        }
+        a:hover, a:active {
+          color: red;
+      }
+    }
+  }
+  div:nth-of-type(1){
+    border-left: 0;
+    border-right: 0;
+  }
+  div:nth-of-type(4){
+    border-left: 0;
+    border-right: 0;
+  }
+}
+/* For small screens like mobile */
+@media all and (max-width: 767px) and (min-width: 200px) {
+  .navbar{
+    max-width: 100%;
+    padding: .5rem 0;
+
+    div{
+      font-size: .65rem;
+    }
+  }
+}
+
+/* For medium screens like iPad */
+@media all and (max-width: 1020px) and (min-width: 768px) {
+  .navbar{
+    max-width: 100%;
+    padding: .5rem 0;
+  }
+}
+/* For regular Laptop and desktop screens*/
+@media all and (max-width: 1920px) and (min-width: 1021px) {
+  .navbar{
+    max-width: 100%;
+  }
+}

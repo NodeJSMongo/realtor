@@ -1,31 +1,23 @@
 .modal1{
   position: absolute;
+  top: 0;
   z-index: 20;
-  top:5;
-  bottom: 3%;
-  left: 0;
-  right: 0;
   opacity: 0;
-  max-width: 56%;
-  background-color: #fff;
   visibility: hidden;
-  margin: 1rem auto;
 }
 
 .modal1-visible{
   opacity: .94;
   visibility: visible;
   position: absolute;
-  top:62%;
-  right: 10%;
+  top:60%;
+  right: 30%;
   border-radius: 5px;
-  div{
-    max-height: auto;
-    border-radius: 5px;
-    line-height: inherit;
-    max-width: 80%;
-    div{
-      display: inline;
+  width: 60%;
+  background-color: #fff;
+  ol{
+    li{
+      display: inline-block;
     }
   }
 }
@@ -33,23 +25,17 @@
 .modal1 button{
   position: absolute;
   top: 0;
+  right: 0;
+  width: 30px;
   border: none;
-  background-color: #777;
-  font-size: 2rem;
+  background-color: #d0191d;
+  font-size: 3rem;
   font-weight: bolder;
   color: #fff;
-  transform: scaleX(1.4);
+  transform: scaleX(1.5);
   transform-origin: 100% 0;
   cursor: pointer;
   border-radius: 0  0 5px 5px;
-}
-
-.modal1 button:nth-of-type(1){
-  right: 0;
-  font-size: 2rem;
-}
-.modal1 button:nth-of-type(2){
-  right: 8%;
 }
 
 .modal-close{
@@ -57,16 +43,73 @@
   visibility: hidden;
 }
 
-@media only screen and (min-width: 768px) {
-  .modal1-visible{
-    div{
-      max-width: 40%;
-      font-size: .8em;
-    }
-  }
-}
 
 .footerLinks-modal__link{
   font-size: 1rem;
   font-weight: bolder;
+}
+
+
+/* For small screens like mobile */
+@media all and (max-width: 767px) and (min-width: 200px) {
+  .footerLinks-modal__link{
+    font-size: .7rem;
+  }
+
+  .modal1-visible{
+    top: 47%;
+    right: 2%;
+    width: 96%;
+    ol{
+      li{
+        display:block;
+        text-align: left;
+        margin-bottom: -1rem;
+        font-size: .8rem;
+      }
+    }
+  }
+  .modal1 button{
+    width: 20px;
+    font-size: 1.5rem;
+  }
+}
+
+/* For medium screens like iPad */
+@media all and (max-width: 1023px) and (min-width: 768px) {
+  .footerLinks-modal__link{
+    font-size: .7rem;
+  }
+
+  .modal1-visible{
+    top:64%;
+    right: 2%;
+    width: 96%;
+    ol{
+      li{
+        text-align: left;
+        margin-bottom: -1rem;
+        font-size: .8rem;
+      }
+    }
+  }
+  .modal1 button{
+    width: 20px;
+    font-size: 1.5rem;
+  }
+}
+/* For regular Laptop and desktop screens*/
+@media all and (max-width: 1600px) and (min-width: 1024px) {
+  .modal1-visible{
+    top:64%;
+    right: 2%;
+    width:92%;
+    ol{
+      li{
+        text-align: left;
+        margin-bottom: -1rem;
+        font-size: .8rem;
+      }
+    }
+  }
 }

@@ -1,0 +1,61 @@
+.learnmore{
+  padding: .5rem 0 0 0;
+  max-width: 85%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+.learnmore_slider{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 40vh;
+}
+
+.learnmore_text{
+  font-size: 2rem;
+  text-align: center;
+  max-width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5rem;
+  font-weight: bolder;
+}
+
+/* For small screens like mobile */
+@media all and (max-width: 767px) and (min-width: 200px) {
+  .learnmore{
+    max-width: 100%;
+  }
+  .learnmore_slider{
+    height: auto;
+  }
+  .learnmore_text{
+    max-width: 80%;
+    font-size: .9rem;
+    margin-top: 1rem;
+  }
+}
+
+/* For medium screens like iPad */
+@media all and (max-width: 1020px) and (min-width: 768px) {
+  .learnmore{
+    max-width: 100%;
+  }
+  .learnmore_slider{
+    height: auto;
+  }
+  .learnmore_text{
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    max-width: 70%;
+  }
+}
+/* For regular Laptop and desktop screens*/
+@media all and (max-width: 1920px) and (min-width: 1021px) {
+  .learnmore{
+    max-width: 100%;
+  }
+  .learnmore_slider{
+    height: auto;
+  }
+}

@@ -1,0 +1,74 @@
+.latestPost{
+  max-width: 85%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  div{
+    padding: 0 1rem;
+      div{
+        border: 1px solid #ddd;
+        p{
+          padding-left: .5rem;
+          padding-top: .5rem;
+          color: #000;
+          font-family: 'Raleway', sans-serif;
+          font-size: 1rem;
+        }
+      }
+      img{
+        display: block;
+        height: 180px;
+        width: 100%;
+      }
+  }
+}
+
+/* For small screens like mobile */
+@media all and (max-width: 767px) and (min-width: 200px) {
+  .latestPost{
+    max-width: 100%;
+    div{
+      padding: 0 .2rem;
+        div{
+          border: 1px solid #ddd;
+          p{
+            font-size: .7rem;
+            padding-left: .2rem;
+            padding-top: .2rem;
+          }
+        }
+        img{
+          height: 100px;
+          width: 100%;
+        }
+    }
+  }
+}
+
+/* For medium screens like iPad */
+@media all and (max-width: 1020px) and (min-width: 768px) {
+  .latestPost{
+    max-width: 94%;
+    div{
+      padding: 0 .2rem;
+        div{
+          border: 1px solid #ddd;
+          p{
+            font-size: .9rem;
+            padding-left: .2rem;
+            padding-top: .2rem;
+          }
+        }
+        img{
+          height: 140px;
+          width: 100%;
+        }
+    }
+  }
+}
+/* For regular Laptop and desktop screens*/
+@media all and (max-width: 1920px) and (min-width: 1021px) {
+/* same as largest screen */
+}
