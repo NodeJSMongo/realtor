@@ -15,7 +15,7 @@
 @media all and (max-width: 767px) and (min-width: 200px) {
   .headerHero{
     img{
-      height: 75vh;
+      height: 73vh;
       width: 100%;
     }
   }
@@ -25,7 +25,7 @@
 @media all and (max-width: 1020px) and (min-width: 768px) {
   .headerHero{
     img{
-      height: 75vh;
+      height: 73vh;
       width: 100%;
     }
   }
