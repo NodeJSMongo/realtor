@@ -602,7 +602,7 @@ select {
 
 /* For small screens like mobile */
 
-@media all and (max-width: 767px) and (min-width: 200px) {
+@media all and (max-width: 412px) and (min-width: 200px) {
   .row{
     max-width: 98%;
     margin-left: 2%;
@@ -616,26 +616,52 @@ select {
     }
 }
 
+/* For small screens like mobile */
+
+@media all and (max-width: 767px) and (min-width: 413px) {
+  .row{
+    max-width: 97%;
+    margin-left: 3%;
+  }
+  .card_style{
+    margin: .5rem 0 .5rem .5rem;
+    max-width: 45%;
+  }
+    .card_style img{
+      height: 120px;
+    }
+}
+
 /* For medium screens like iPad */
 
 @media all and (max-width: 1024px) and (min-width: 768px) {
-.row{
-  max-width: 98%;
-  margin-left: 1%;
-}
-.card_style{
-  margin: .5rem 0 .5rem .5rem;
-  max-width: 32%;
-}
-  .card_style img{
-    height: 150px;
+  .row{
+    max-width: 98%;
+    margin-left: 1%;
   }
+  .card_style{
+    margin: .5rem 0 .5rem .5rem;
+    max-width: 32%;
+  }
+    .card_style img{
+      height: 150px;
+    }
 }
 
 /* For regular Laptop and desktop screens*/
 
-@media all and (max-width: 1920px) and (min-width: 1021px) {
-/* same as the largest screen*/
+@media all and (max-width: 1320px) and (min-width: 1025px) {
+    .row{
+      max-width: 94%;
+      margin-left: 3%;
+    }
+    .card_style{
+      margin: .5rem 0 .5rem .5rem;
+      max-width: 30%;
+  }
+      .card_style img{
+        height: 180px;
+      }
 }
 
 .headerNav{
@@ -719,7 +745,7 @@ select {
 
 @media all and (max-width: 767px) and (min-width: 200px) {
     .headerHero img{
-      height: 75vh;
+      height: 73vh;
       width: 100%;
     }
 }
@@ -728,7 +754,7 @@ select {
 
 @media all and (max-width: 1020px) and (min-width: 768px) {
     .headerHero img{
-      height: 75vh;
+      height: 73vh;
       width: 100%;
     }
 }

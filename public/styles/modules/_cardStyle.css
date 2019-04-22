@@ -61,14 +61,15 @@
 }
 /* For regular Laptop and desktop screens*/
 @media all and (max-width: 1320px) and (min-width: 1025px) {
-  .row{
-    max-width: 94%;
-    margin-left: 3%;
-  }
-  .card_style{
-    margin: .5rem 0 .5rem .5rem;
-    max-width: 30%;
-    img{
-      height: 180px;
+    .row{
+      max-width: 94%;
+      margin-left: 3%;
     }
+    .card_style{
+      margin: .5rem 0 .5rem .5rem;
+      max-width: 30%;
+      img{
+        height: 180px;
+      }
+  }
 }
