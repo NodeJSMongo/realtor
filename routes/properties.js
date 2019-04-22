@@ -6,12 +6,14 @@ var MongoClient = require('mongodb').MongoClient;
 
 router.get("/properties", function(req, res){
 
+  var minprice = parseInt(req.query.minprice);
+  var maxprice = parseInt(req.query.maxprice);
+
   var finalQuery = {};
   var noMatch = null;
 
   var areaQuery = req.query.area;
   var proQuery = req.query.propertyclass;
-  var priceQuery = req.query.listprice;
   var saleQuery = req.query.sale;
   var statusQuery = req.query.status;
   var roomQuery = req.query.bedroom;
@@ -37,10 +39,6 @@ router.get("/properties", function(req, res){
     finalQuery.area = req.query.area;
   }
 
-  if(req.query.listprice){
-    finalQuery.listprice = req.query.listprice;
-  }
-
   if(req.query.bedroom){
     finalQuery.bedroom = req.query.bedroom;
   }
@@ -57,19 +55,55 @@ router.get("/properties", function(req, res){
     finalQuery.laststatus = req.query.laststatus;
   }
 
-  if(proQuery || areaQuery || saleQuery || statusQuery || priceQuery ||
+  if(proQuery || areaQuery || saleQuery || statusQuery ||
     roomQuery || squareFt || outerDesign || propertyType || lastStatus){
 
      MongoClient.connect('mongodb://mls_app:543TWOone@ds035693.mlab.com:35693/mls', { useNewUrlParser: true }, function(err, client){
-     if (err) throw err
-      var db = client.db('mls')
-      db.collection('listings').find(finalQuery).toArray(function (err, result) {
-        if (err) throw err
-        if(result.length < 1){
-          var noMatch = "You must select a search criteria to a filtered listing. Please try again";
-        }
-        res.render("properties", {properties: result , noMatch: noMatch});
-      })
+     if (err){
+       console.log(err);
+     }else{
+       var db = client.db('mls')
+        db.collection('listings').find(finalQuery).toArray(function (err, result) {
+         if (err){
+           console.log(err);
+         }else{
+           if(result.length < 1){
+             var noMatch = "You must select a search criteria to a filtered listing. Please try again";
+           }else{
+             if(minprice && maxprice){
+               MongoClient.connect('mongodb://mls_app:543TWOone@ds035693.mlab.com:35693/mls', { useNewUrlParser: true }, function(err, client){
+               if (err) throw err
+                var db = client.db('mls')
+                db.collection('listings').find({listprice: { $gte: minprice, $lte: maxprice }}).toArray(function (err, result) {
+                  if (err){
+                    console.log(err);
+                  }else{
+                    if(result.length < 1){
+                      var noMatch = "You must select a search criteria to a filtered listing. Please try again";
+                    }
+                    res.render("properties", {properties: result , noMatch: noMatch});
+                  }
+                })
+             })
+           }else{
+             res.render("properties", {properties: result , noMatch: noMatch});
+           }
+           }
+         }
+       });
+     }
+    });
+  }else if(minprice && maxprice){
+      MongoClient.connect('mongodb://mls_app:543TWOone@ds035693.mlab.com:35693/mls', { useNewUrlParser: true }, function(err, client){
+      if (err) throw err
+       var db = client.db('mls')
+       db.collection('listings').find({listprice: { $gte: minprice, $lte: maxprice }}).toArray(function (err, result) {
+         if (err) throw err
+         if(result.length < 1){
+           var noMatch = "You must select a search criteria to a filtered listing. Please try again";
+         }
+         res.render("properties", {properties: result , noMatch: noMatch});
+       })
     })
   }else{
     MongoClient.connect('mongodb://mls_app:543TWOone@ds035693.mlab.com:35693/mls', { useNewUrlParser: true }, function(err, client){

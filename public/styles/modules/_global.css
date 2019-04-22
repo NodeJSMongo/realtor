@@ -126,7 +126,7 @@ table td {
 /* will be separated */
 
 .properties{
-  max-width: 85%;
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
   height: auto;
@@ -135,20 +135,12 @@ table td {
     text-align: center;
 }
 .row{
-  max-width: 100%;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 98%;
+  margin-left: 1%;
 }
-.card_style{
-  margin: .5rem;
-  max-width:31.3%;
-  img{
-    height: 180px;
-    margin: auto;
-  }
-}
+
 .realtor_image{
-width: 270px;
+ width: 270px;
  height: 270px !important;
  border-radius: 50%;
 }
@@ -206,11 +198,24 @@ width: 270px;
       font-size: .8rem;
     }
   }
+
+  select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      text-indent: 1px;
+      text-overflow: '';
+  }
 }
 
 /* For medium screens like iPad */
 @media all and (max-width: 1020px) and (min-width: 768px) {
 /* same as the largest screen*/
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+}
 }
 /* For regular Laptop and desktop screens*/
 @media all and (max-width: 1920px) and (min-width: 1021px) {

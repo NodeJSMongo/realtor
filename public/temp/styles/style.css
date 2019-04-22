@@ -474,7 +474,7 @@ table td {
 /* will be separated */
 
 .properties{
-  max-width: 85%;
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
   height: auto;
@@ -485,23 +485,12 @@ table td {
 }
 
 .row{
-  max-width: 100%;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 98%;
+  margin-left: 1%;
 }
-
-.card_style{
-  margin: .5rem;
-  max-width:31.3%;
-}
-
-.card_style img{
-    height: 180px;
-    margin: auto;
-  }
 
 .realtor_image{
-width: 270px;
+ width: 270px;
  height: 270px !important;
  border-radius: 50%;
 }
@@ -567,12 +556,25 @@ width: 270px;
       padding: .3rem .7rem;
       font-size: .8rem;
     }
+
+  select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      text-indent: 1px;
+      text-overflow: '';
+  }
 }
 
 /* For medium screens like iPad */
 
 @media all and (max-width: 1020px) and (min-width: 768px) {
 /* same as the largest screen*/
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+}
 }
 
 /* For regular Laptop and desktop screens*/
@@ -581,65 +583,59 @@ width: 270px;
 /* same as the largest screen*/
 }
 
-/*Grid layout areas*/
+.row{
+  max-width: 98%;
+  margin-left: 1%;
+}
 
-/*--------------------------------------- */
+.card_style{
+  margin: .5rem 0;
+  max-width: 24%;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-/* Grid template area names are defined here*/
+.card_style img{
+    height: 200px;
+    margin: auto;
+  }
 
-/*----------------------------------------*/
+/* For small screens like mobile */
 
-.headerNav{grid-area: hdn ;}
+@media all and (max-width: 767px) and (min-width: 200px) {
+  .row{
+    max-width: 98%;
+    margin-left: 2%;
+  }
+  .card_style{
+    margin: .5rem 0 .5rem .5rem;
+    max-width: 45%;
+  }
+    .card_style img{
+      height: 120px;
+    }
+}
 
-.featureProduct{grid-area:fp;}
+/* For medium screens like iPad */
 
-.featureMedia{grid-area:fm;}
+@media all and (max-width: 1024px) and (min-width: 768px) {
+.row{
+  max-width: 98%;
+  margin-left: 1%;
+}
+.card_style{
+  margin: .5rem 0 .5rem .5rem;
+  max-width: 32%;
+}
+  .card_style img{
+    height: 150px;
+  }
+}
 
-.featureAccess{grid-area:fa;}
+/* For regular Laptop and desktop screens*/
 
-.featureBundles{grid-area:fb;}
-
-.placeOrder{grid-area:po;}
-
-.modal{grid-area:mo}
-
-.footerLinks{grid-area:fl;}
-
-.footerCopy{grid-area:fc;}
-
-.header-mobile{grid-area: hdnm ;}
-
-/*------------------------------------------ */
-
-/* Mobile first layout: This website has one */
-
-/*  breakpoint at 767px;                     */
-
-/*-------------------------------------------*/
-
-/* Layout for max-width 767px*/
-
-/*
-.wrapper{
-  display: grid;
-}*/
-
-/*Layout for larger screens from 768px to above*/
-
-.wrapper{
-  display: grid;
-  max-width: 90%;
-  margin: auto;
-  grid-template:
-                 "hdn"
-                 "fp"
-                 "fm"
-                 "fa"
-                 "fb"
-                 "po"
-                 "mo"
-                 "fl"
-                 "fc";
+@media all and (max-width: 1920px) and (min-width: 1021px) {
+/* same as the largest screen*/
 }
 
 .headerNav{
@@ -723,7 +719,7 @@ width: 270px;
 
 @media all and (max-width: 767px) and (min-width: 200px) {
     .headerHero img{
-      height: 50vh;
+      height: 75vh;
       width: 100%;
     }
 }
@@ -732,7 +728,7 @@ width: 270px;
 
 @media all and (max-width: 1020px) and (min-width: 768px) {
     .headerHero img{
-      height: 65vh;
+      height: 75vh;
       width: 100%;
     }
 }
@@ -889,22 +885,18 @@ width: 270px;
 }
 
 .modal1{
-  position: absolute;
-  top: 0;
   z-index: 20;
   opacity: 0;
   visibility: hidden;
 }
 
 .modal1-visible{
-  opacity: .94;
+  opacity: .9;
   visibility: visible;
-  position: absolute;
-  top:60%;
-  right: 30%;
   border-radius: 5px;
-  width: 60%;
+  width: 70%;
   background-color: #fff;
+  margin-top: -2.5rem;
 }
 
 .modal1-visible ol li{
@@ -912,10 +904,7 @@ width: 270px;
     }
 
 .modal1 button{
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 30px;
+  position: relative;
   border: none;
   background-color: #d0191d;
   font-size: 3rem;
@@ -926,7 +915,7 @@ width: 270px;
   -webkit-transform-origin: 100% 0;
           transform-origin: 100% 0;
   cursor: pointer;
-  border-radius: 0  0 5px 5px;
+  padding: .3rem;
 }
 
 .modal-close{
@@ -941,20 +930,44 @@ width: 270px;
 
 /* For small screens like mobile */
 
-@media all and (max-width: 767px) and (min-width: 200px) {
+@media all and (max-width: 320px) and (min-width: 200px) {
   .footerLinks-modal__link{
     font-size: .7rem;
   }
 
   .modal1-visible{
-    top: 47%;
-    right: 2%;
-    width: 96%;
+    width: 98%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
   }
       .modal1-visible ol li{
         display:block;
         text-align: left;
-        margin-bottom: -1rem;
+        font-size: .8rem;
+      }
+  .modal1 button{
+    width: 20px;
+    font-size: 1.5rem;
+  }
+}
+
+/* For small screens like mobile */
+
+@media all and (max-width: 767px) and (min-width: 321px) {
+  .footerLinks-modal__link{
+    font-size: .7rem;
+  }
+
+  .modal1-visible{
+    width: 98%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+  }
+      .modal1-visible ol li{
+        display:block;
+        text-align: left;
         font-size: .8rem;
       }
   .modal1 button{
@@ -971,14 +984,12 @@ width: 270px;
   }
 
   .modal1-visible{
-    top:64%;
-    right: 2%;
-    width: 96%;
+    margin-top: -3.2rem;
   }
       .modal1-visible ol li{
+        display:block;
         text-align: left;
-        margin-bottom: -1rem;
-        font-size: .8rem;
+        font-size: 1rem;
       }
   .modal1 button{
     width: 20px;
@@ -988,18 +999,20 @@ width: 270px;
 
 /* For regular Laptop and desktop screens*/
 
-@media all and (max-width: 1600px) and (min-width: 1024px) {
+/*media all and (max-width: 1600px) and (min-width: 1024px) {
   .modal1-visible{
     top:64%;
     right: 2%;
     width:92%;
-  }
-      .modal1-visible ol li{
+    ol{
+      li{
         text-align: left;
         margin-bottom: -1rem;
         font-size: .8rem;
       }
-}
+    }
+  }
+} */
 
 .new_1{
   display: grid;
@@ -1368,146 +1381,211 @@ width: 270px;
 }
 
 .search_box{
-  width: 70%;
-  max-width: 100%;
+  max-width: 80%;
   position: absolute;
-  left: 5%;
-  top: 45%;
+  top: 35%;
+  left: 10%;
   z-index: 10;
 }
 
 .search_1{
-  background: #fff;
-  max-width: 100%;
-  border: 2px solid #fff;
-  border-radius: 50px;
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   }
 
 .search_1 div{
-    display: inline-block;
-    padding: .8rem .5rem;
+    padding: .8rem .5rem 0 .5rem;
+    background-color: #fff;
+    opacity: .9;
     }
 
 .search_1 div select{
-        display: block;
-        font-size: 16px;
+        font-size: 1rem;
         font-family: sans-serif;
         font-weight: 700;
         color: #444;
         line-height: 1.3;
-        padding: .6em .4em .5em .4em;
-        max-width: 100%;
+        padding: .6em .4em .6em .4em;
         box-sizing: border-box;
-        margin: 0;
         border: none;
-        box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
-        width:200px;
+        outline:0px;
+        margin: 0;
       }
 
-.search_1 div input{
-        display: block;
-        font-size: 16px;
-        font-family: sans-serif;
-        font-weight: 700;
-        color: #444;
-        line-height: 1;
-        width: 100%;
-        max-width: 100%;
-        padding: .6em .4em .5em .4em;
-        box-sizing: border-box;
+.search_1 div button{
         border: none;
+        background-color:#94ca60;
+        transition: .3s;
+        color: #fff;
+        outline:0px;
+        font-weight: 700;
       }
+
+.search_1 div button i{
+          padding: .5em .4em .5em .4em;
+          line-height: 1.3;
+        }
 
 .search_1 div:nth-of-type(5){
-      position: absolute;
-      right: -1%;
-      top: 22%;
+      background-color:#94ca60;
+      border-radius: 0 10px 0 0;
+      text-align: center;
+      cursor: pointer;
     }
 
-.search_1 div:nth-of-type(5) button{
-        border: none;
-        background-color:#94ca60; ;
-        color: #fff;
-        padding: 16px;
-        margin: 0;
-        width: 65px;
-        height: 65px;
-        box-sizing: border-box;
-        transition: .3s;
-        border-radius: 50%;
+.search_1 div:nth-of-type(1){
+      border-radius: 10px 0 0 0;
+    }
+
+@media all and (max-width: 320px) and (min-width: 200px) {
+  .search_box{
+    max-width: 90%;
+    left: 5%;
+  }
+    .search_1 div{
+        padding: .3rem .3rem ;
       }
+        .search_1 div select{
+          font-size: .8rem;
+          padding: .3em .2em .3em .2em;
+          width:50px;
+        }
+          .search_1 div button i{
+            padding: .3em .2em .3em .2em;
+            font-size: .8rem;
+            line-height: 1.3;
+          }
+}
 
-/* For small screens like mobile */
-
-@media all and (max-width: 767px) and (min-width: 200px) {
+@media all and (max-width: 360px) and (min-width: 321px) {
     .search_box{
-      width: 98%;
-      left: 1%;
-      top: 30%;
+      max-width: 96%;
+      left: 2%;
     }
-    .search_1{
-      padding: .3rem .5rem;
-      }
       .search_1 div{
-          padding: 0;
+          padding: .3rem .3rem ;
         }
           .search_1 div select{
             font-size: .8rem;
-            line-height: .6;
-            width: 60px;
+            padding: .3em .2em .3em .2em;
+            width:60px;
           }
-            .search_1 div select option{
+            .search_1 div button i{
+              padding: .3em .2em .3em .2em;
+              font-size: .8rem;
+              line-height: 1.3;
+            }
+  }
+
+/* For small screens like mobile */
+
+@media all and (max-width: 376px) and (min-width: 361px) {
+    .search_box{
+      max-width: 96%;
+      left: 2%;
+    }
+      .search_1 div{
+          padding: .3rem .3rem ;
+        }
+          .search_1 div select{
+            font-size: .8rem;
+            width:69px;
+          }
+            .search_1 div button i{
               font-size: .8rem;
             }
-        .search_1 div:nth-of-type(5){
-          position: relative;
-          float: right;
-          margin-top: -.28rem;
-          margin-right: -.4rem;
+  }
+
+/* For small screens like mobile */
+
+@media all and (max-width: 412px) and (min-width: 377px) {
+    .search_box{
+      max-width: 96%;
+      left: 2%;
+    }
+      .search_1 div{
+          padding: .3rem .3rem ;
         }
-          .search_1 div:nth-of-type(5) button{
-            padding: 1.2px;
-            margin: 0;
-            width: 40px;
-            height: 40px;
-            font-size: .5rem;
+          .search_1 div select{
+            font-size: .8rem;
+            width:75px;
           }
+            .search_1 div button i{
+              font-size: .8rem;
+            }
+  }
+
+/* For small screens like mobile */
+
+@media all and (max-width: 560px) and (min-width: 413px) {
+    .search_box{
+      max-width: 96%;
+      left: 2%;
+    }
+      .search_1 div{
+          padding: .3rem .3rem ;
+        }
+          .search_1 div select{
+            font-size: .8rem;
+            width:79px;
+          }
+            .search_1 div button i{
+              font-size: .8rem;
+            }
+  }
+
+/* For small screens like mobile */
+
+@media all and (max-width: 767px) and (min-width: 561px) {
+    .search_box{
+      max-width: 96%;
+      left: 2%;
+    }
+      .search_1 div{
+          padding: .3rem .3rem ;
+        }
+          .search_1 div select{
+            font-size: .8rem;
+            width:110px;
+          }
+            .search_1 div button i{
+              font-size: .8rem;
+            }
   }
 
 /* For medium screens like iPad */
 
-@media all and (max-width: 1020px) and (min-width: 768px) {
+@media all and (max-width: 1023px) and (min-width: 768px) {
     .search_box{
-      width: 98%;
-      left: 1%;
-      top: 40%;
+      left: 5%;
+      top: 30%;
+      max-width: 90%;
     }
-    .search_1{
-      padding: .3rem .5rem;
-      }
-      .search_1 div{
-          padding: .4rem .5rem;
-        }
           .search_1 div select{
             font-size: 1.2rem;
-            width: 120px;
+            width:125px;
           }
-        .search_1 div:nth-of-type(5){
-          position: relative;
-          float: right;
-          margin-top: -.6rem;
-          margin-right: -.4rem;
+          .search_1 div button{
+            padding: .55em .4em .65em .4em;
         }
-  }
+}
 
 /* For regular Laptop and desktop screens*/
 
-@media all and (max-width: 1320px) and (min-width: 1021px) {
+@media all and (max-width: 1080px) and (min-width: 1024px) {
     .search_box{
-      width: 90%;
-      top: 40%;
+      left: 5%;
+      top: 30%;
+      max-width: 90%;
     }
-  }
+          .search_1 div select{
+            font-size: 1.3rem;
+            width:180px;
+          }
+          .search_1 div button{
+            padding: .55em .4em .65em .4em;
+        }
+}
 
 .btn{
   background-color: #fff;
@@ -1543,7 +1621,7 @@ width: 270px;
 @media all and (max-width: 767px) and (min-width: 200px) {
   .btn{
     padding: .2rem .5rem;
-    border-radius: 50px;
+    border-radius: 0;
     font-size: .6rem;
   }
 }
@@ -1612,9 +1690,8 @@ width: 270px;
 @media all and (max-width: 767px) and (min-width: 200px) {
   .navbar{
     max-width: 100%;
-    padding: .5rem 0;
+    padding: .8rem 0;
   }
-
     .navbar div{
       font-size: .65rem;
     }
@@ -1625,7 +1702,7 @@ width: 270px;
 @media all and (max-width: 1020px) and (min-width: 768px) {
   .navbar{
     max-width: 100%;
-    padding: .5rem 0;
+    padding: .8rem 0;
   }
 }
 
@@ -1723,12 +1800,18 @@ width: 270px;
 @media all and (max-width: 767px) and (min-width: 200px) {
   .latestPost{
     max-width: 100%;
+    grid-template-columns: 1fr;
   }
     .latestPost div{
       padding: 0 .2rem;
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+      padding-top: .5rem;
     }
         .latestPost div div{
           border: 1px solid #ddd;
+          width: 100%;
         }
           .latestPost div div p{
             font-size: .7rem;
@@ -1736,7 +1819,7 @@ width: 270px;
             padding-top: .2rem;
           }
         .latestPost div img{
-          height: 100px;
+          height: 180px;
           width: 100%;
         }
 }
@@ -2004,49 +2087,23 @@ width: 270px;
 }
 
 .filterNav{
-  width: auto;
-  padding: .9rem;
+  max-width:100%;
   background: #fff;
-  max-width: 100%;
   border: 2px solid #fff;
-  border-radius: 50px;
-  position: absolute;
-  right: 2%;
-  top: 51%;
   text-align: center;
   z-index: 10;
   cursor: pointer;
   font-size: 1rem;
+  margin-left: 80%;
+  margin-top: 1rem;
+  padding: .5rem 0 .5rem 0;
 }
 
 /* For small screens like mobile */
 
 @media all and (max-width: 767px) and (min-width: 200px) {
   .filterNav{
-    padding: .3rem .9rem;
-    top: 42%;
-    font-size: .5rem;
-    border: .5px solid #fff;
-  }
-}
-
-/* For medium screens like iPad */
-
-@media all and (max-width: 1023px) and (min-width: 768px) {
-  .filterNav{
-    padding: .3rem .9rem;
-    top: 58%;
-    font-size: .7rem;
-  }
-}
-
-/* For regular Laptop and desktop screens*/
-
-@media all and (max-width: 1400px) and (min-width: 1024px) {
-  .filterNav{
-    padding: .3rem .9rem;
-    right: 5%;
-    top: 56%;
-    font-size: .9rem;
+    margin-left: 65%;
+    padding: .3rem 0 .3rem 0;
   }
 }

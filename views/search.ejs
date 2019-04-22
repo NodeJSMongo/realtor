@@ -6,8 +6,7 @@
   <img src="/images/hero_one.jpg" alt="" class="image_height">
   <img src="/images/hero_2.jpg" alt="" class="image_height">
 </div>
-  <form class="" action="/properties" method="GET">
-    <% include home/filters %>
+  <form class="" action="/properties" method="GET" onsubmit="myFunction()">
     <% include home/searchbar %>
   </form>
   <div class="getStarted">
@@ -50,4 +49,10 @@
   <div class="learnmore">
     <% include home/learnmore %>
   </div>
+
+<script>
+function myFunction() {
+  window.location.href.split('?')[0];
+}
+</script>
   <% include partials/footer %>

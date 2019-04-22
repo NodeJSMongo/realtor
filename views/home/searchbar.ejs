@@ -6,7 +6,6 @@
       <input  type="button" name="propertyclass" value="Industrial" class="tabPanel tabPanel_com"/>
   </div>
   <div class="search_1">
-
     <div class="">
         <select class="" name="area">
               <option  name="" value=""> Area </option>
@@ -60,28 +59,36 @@
         </select>
     </div>
     <div class="">
-        <select class="" name="minprice" disabled>
-          <option name="" value="">Min Price</option>
-          <option name="listprice1" value="10">0</option>
-          <option name="listprice1" value="10000">10,000</option>
-          <option name="listprice2" value="50000">50,000</option>
-          <option name="listprice3" value="80000">80,000</option>
-          <option name="listprice4" value="100000">1,00,000</option>
-          <option name="listprice5" value="150000">1,50,000</option>
-          <option name="listprice6" value="200000">2,00,000</option>
-          <option name="listprice7" value="250000">2,50,000</option>
+        <select class="" name="minprice">
+          <option value="">Min Price</option>
+          <option value="1000">1,000</option>
+          <option value="10000">10,000</option>
+          <option value="50000">50,000</option>
+          <option value="100000">100,000</option>
+          <option value="200000">200,000</option>
+          <option value="300000">300,000</option>
+          <option value="500000">500,000</option>
+          <option value="1000000">1,000,000</option>
+          <option value="2500000">2,500,000</option>
+          <option value="5000000">5,000,000</option>
+          <option value="10000000">10,000,000</option>
         </select>
       </div>
       <div class="">
-          <select class="" name="maxprice" disabled>
-            <option name="" value="">Max Price</option>
-            <option name="listprice11" value="100000">100,000</option>
-            <option name="listprice12" value="500000">500,000</option>
-            <option name="listprice13" value="800000">800,0000</option>
-            <option name="listprice14" value="1000000">10,00,000</option>
-            <option name="listprice15" value="1500000">15,00,000</option>
-            <option name="listprice16" value="2000000">20,00,000</option>
-            <option name="listprice17" value="2500000">25,00,000 + </option>
+          <select class="" name="maxprice">
+            <option value="">Max Price</option>
+            <option value="10000">10,000</option>
+            <option value="50000">50,000</option>
+            <option value="100000">100,000</option>
+            <option value="200000">200,000</option>
+            <option value="300000">300,000</option>
+            <option value="500000">500,000</option>
+            <option value="1000000">1,000,000</option>
+            <option value="2500000">2,500,000</option>
+            <option value="5000000">5,000,000</option>
+            <option value="10000000">10,000,000</option>
+            <option value="100000000">100,000,000</option>
+            <option value="1000000000">1,000,000,000</option>
           </select>
         </div>
       <div class="">
@@ -98,7 +105,37 @@
         </select>
       </div>
     <div class="">
-        <button type="submit" name="submit" value="submit"><i class="fas fa-search"></i></button>
+        <button type="submit" name="submit"><i class="fas fa-search"></i></button>
     </div>
+  </div>
+  <div class="footerLinks-modal filterNav">
+    <a class="footerLinks-modal__link"> Filter </a>
+  </div>
+  <div class="modal1">
+    <button type="button" class="close" data-dismiss="modal" value="close">×</button>
+  <ol class="">
+      <li class="">
+          <input type="Number"  name="bedroom" value="" placeholder="#Bedrooms">
+          <select class="" name="sale">
+            <option  value="" >For  </option>
+            <option  value="Sale">Sale </option>
+            <option  value="Lease">Lease </option>
+            <option  value="Sub Lease">Sub-Lease </option>
+          </select>
+      </li>
+
+      <li class="">
+        <input type="text" name="measurement" value="" placeholder="square ft./decimal">
+        <select class="" name="level">
+          <option  value="">Floor</option>
+          <option  value="First Floor">1st Floor</option>
+          <option  value="Second Floor">2nd Floor</option>
+          <option  value="Third Floor"> 3rd Floor</option>
+          <option  value="Sixth Floor">4th, 5th or 6th Floor</option>
+          <option  value="Ninth Floor"> 7th, 8th or 9th Floor</option>
+          <option  value="Skyscrapper"> 10th or above</option>
+        </select>
+      </li>
+    </ol>
   </div>
 </div>

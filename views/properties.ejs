@@ -12,18 +12,23 @@
   <div class="row">
     <% properties.forEach(function(property, index){ %>
       <%
+      var imageString = [];
+      var urls = [];
       if(property.image){
-        var imageString = property.image;
-        //remove slashes
-        imageString= imageString.replace(/\\/g, "\/");
-        //remove public folder
-        imageString = imageString.replace("public", "");
+        for(var i = 0; i < property.image.length; i++){
+          imageString[i] = property.image[i];
+          //remove slashes
+          imageString[i] = imageString[i].replace(/\\/g, "\/");
+          //remove public folder
+          imageString[i] = imageString[i].replace("public", "");
+
+          urls[i] = "https://floating-peak-65788.herokuapp.com" + imageString[i];
+        }
       }
       %>
-        <%  var url ="https://floating-peak-65788.herokuapp.com" + imageString ; %>
 
-          <div class="card col-sm-4 card_style" style="width: 12rem;">
-            <img class="card-img-top" src="<%= url %>" alt="Card image cap">
+          <div class="card card_style">
+            <img class="card-img-top" src="<%= urls[0] %>" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title"><%= property.exteriortype %></h5>
               <small class=""> <strong> <%= property.city %> <b>|</b> <%= property.stname %> <b>|</b> <%= property.community %></strong> </small>

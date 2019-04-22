@@ -30,7 +30,7 @@
 @media all and (max-width: 767px) and (min-width: 200px) {
   .btn{
     padding: .2rem .5rem;
-    border-radius: 50px;
+    border-radius: 0;
     font-size: .6rem;
   }
 }

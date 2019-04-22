@@ -1,20 +1,16 @@
 .modal1{
-  position: absolute;
-  top: 0;
   z-index: 20;
   opacity: 0;
   visibility: hidden;
 }
 
 .modal1-visible{
-  opacity: .94;
+  opacity: .9;
   visibility: visible;
-  position: absolute;
-  top:60%;
-  right: 30%;
   border-radius: 5px;
-  width: 60%;
+  width: 70%;
   background-color: #fff;
+  margin-top: -2.5rem;
   ol{
     li{
       display: inline-block;
@@ -23,10 +19,7 @@
 }
 
 .modal1 button{
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 30px;
+  position: relative;
   border: none;
   background-color: #d0191d;
   font-size: 3rem;
@@ -35,7 +28,7 @@
   transform: scaleX(1.5);
   transform-origin: 100% 0;
   cursor: pointer;
-  border-radius: 0  0 5px 5px;
+  padding: .3rem;
 }
 
 .modal-close{
@@ -51,20 +44,20 @@
 
 
 /* For small screens like mobile */
-@media all and (max-width: 767px) and (min-width: 200px) {
+@media all and (max-width: 320px) and (min-width: 200px) {
   .footerLinks-modal__link{
     font-size: .7rem;
   }
 
   .modal1-visible{
-    top: 47%;
-    right: 2%;
-    width: 96%;
+    width: 98%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
     ol{
       li{
         display:block;
         text-align: left;
-        margin-bottom: -1rem;
         font-size: .8rem;
       }
     }
@@ -75,21 +68,43 @@
   }
 }
 
-/* For medium screens like iPad */
-@media all and (max-width: 1023px) and (min-width: 768px) {
+/* For small screens like mobile */
+@media all and (max-width: 767px) and (min-width: 321px) {
   .footerLinks-modal__link{
     font-size: .7rem;
   }
 
   .modal1-visible{
-    top:64%;
-    right: 2%;
-    width: 96%;
+    width: 98%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
     ol{
       li{
+        display:block;
         text-align: left;
-        margin-bottom: -1rem;
         font-size: .8rem;
+      }
+    }
+  }
+  .modal1 button{
+    width: 20px;
+    font-size: 1.5rem;
+  }
+}
+/* For medium screens like iPad */
+ @media all and (max-width: 1023px) and (min-width: 768px) {
+  .footerLinks-modal__link{
+    font-size: .7rem;
+  }
+
+  .modal1-visible{
+    margin-top: -3.2rem;
+    ol{
+      li{
+        display:block;
+        text-align: left;
+        font-size: 1rem;
       }
     }
   }
@@ -99,7 +114,7 @@
   }
 }
 /* For regular Laptop and desktop screens*/
-@media all and (max-width: 1600px) and (min-width: 1024px) {
+/*media all and (max-width: 1600px) and (min-width: 1024px) {
   .modal1-visible{
     top:64%;
     right: 2%;
@@ -112,4 +127,4 @@
       }
     }
   }
-}
+} */
