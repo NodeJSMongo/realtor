@@ -129,10 +129,11 @@ table td {
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
-  height: auto;
+  height: 100%;
+
 }
 .properties_error{
-    text-align: center;
+  text-align: center;
 }
 .row{
   max-width: 98%;

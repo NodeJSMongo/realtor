@@ -1,9 +1,8 @@
 
 <div class="search_box">
   <div class="tabPanels">
-      <input type="button" name="propertyclass" value="Residential" class="tabPanel tabPanel_res"/>
-      <input  type="button" name="propertyclass" value="Commercial" class="tabPanel tabPanel_com"/>
-      <input  type="button" name="propertyclass" value="Industrial" class="tabPanel tabPanel_com"/>
+      <input type="button" name="propertyclass" value="Residential" class="tabPanel tabPanel_res property"/>
+      <input  type="button" name="propertyclass" value="Commercial" class="tabPanel tabPanel_com property"/>
   </div>
   <div class="search_1">
     <div class="">
@@ -104,6 +103,10 @@
           <option name="exteriortype2" value="Market">Market</option>
         </select>
       </div>
+      <select name="propertyclass" id="propertyclass" hidden>
+              <option  value="Residential" id="0001" disabled>Residential</option>
+              <option  value="Commercial"  id="0002" disabled>Commercial</option>
+      </select>
     <div class="">
         <button type="submit" name="submit"><i class="fas fa-search"></i></button>
     </div>
@@ -139,3 +142,16 @@
     </ol>
   </div>
 </div>
+<script type="text/javascript">
+  var properties = document.querySelectorAll(".property");
+
+  properties.forEach(function(property){
+    property.onclick = function(){
+      if(properties[0] == this){
+        document.getElementById("0002").disabled = false;
+      }else if(properties[1] == this){
+        document.getElementById("0001").disabled = false;
+      }
+    }
+  });
+</script>
