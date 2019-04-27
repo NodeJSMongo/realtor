@@ -13,8 +13,6 @@ var LocalStrategy = require("passport-local");
 var methodOverride = require("method-override");
 var Listing = require("./models/listing");
 var User = require("./models/user");
-
-
 var secretRoutes = require("./routes/secret");
 var searchRoutes = require("./routes/search");
 var listingsRoutes = require("./routes/listings");
@@ -63,17 +61,14 @@ app.use(require("express-session")({
 
 /*app.use(passport.initialize());
 app.use(passport.session());
-
 passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
-
 app.use(function(req, res, next){
   res.locals.currentUser = req.user;
   res.locals.message = req.flash("error");
   next();
 });
-
 app.use(authRoutes);
 app.use(secretRoutes);
 app.use(searchRoutes);

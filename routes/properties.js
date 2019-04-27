@@ -63,30 +63,26 @@ router.get("/properties", function(req, res){
        console.log(err);
      }else{
        var db = client.db('mls')
-        db.collection('listings').find(finalQuery).toArray(function (err, result) {
+        var filter = db.collection('listings').find(finalQuery).toArray(function (err, result) {
          if (err){
            console.log(err);
          }else{
            if(result.length < 1){
              var noMatch = "You must select a search criteria to a filtered listing. Please try again";
-           }
-             if(minprice && maxprice){
+           }else if(minprice && maxprice){
                MongoClient.connect('mongodb://mls_app:543TWOone@ds035693.mlab.com:35693/mls', { useNewUrlParser: true }, function(err, client){
-               if (err){
-                 console.log(err);
-               }else{
-                 var db = client.db('mls')
-                 db.collection('listings').find({listprice: { $gte: minprice, $lte: maxprice }}).toArray(function (err, result) {
-                   if (err){
-                     console.log(err);
-                   }else{
-                     if(result.length < 1){
-                       var noMatch = "You must select a search criteria to a filtered listing. Please try again";
-                     }
-                     res.render("properties", {properties: result , noMatch: noMatch});
-                   }
-                 })
-               }
+               if (err) throw err
+                var db = client.db('mls')
+                db.collection('listings').find({listprice: { $gte: minprice, $lte: maxprice }}).toArray(function (err, result) {
+                  if (err){
+                    console.log(err);
+                  }else{
+                    if(result.length < 1){
+                      var noMatch = "You must select a search criteria to a filtered listing. Please try again";
+                    }
+                    res.render("properties", {properties: result , noMatch: noMatch});
+                  }
+                })
              })
            }
             res.render("properties", {properties: result , noMatch: noMatch});
@@ -94,8 +90,7 @@ router.get("/properties", function(req, res){
        });
      }
     });
-  }else if(minprice && maxprice && !(proQuery || areaQuery || saleQuery || statusQuery ||
-    roomQuery || squareFt || outerDesign || propertyType || lastStatus)){
+  }else if(minprice && maxprice){
       MongoClient.connect('mongodb://mls_app:543TWOone@ds035693.mlab.com:35693/mls', { useNewUrlParser: true }, function(err, client){
       if (err) throw err
        var db = client.db('mls')
