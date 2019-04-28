@@ -8,10 +8,16 @@
       return foundDate;
     }
   %>
+  <% var placeholder1 = "/images/house1.jpg"; %>
+  <% var placeholder2 = "/images/house2.jpg"; %>
+  <% var placeholder3 = "/images/house3.jpg"; %>
+  <% var placeholder4 = "/images/house4.jpg"; %>
+  <% var placeholder5 = "/images/house5.jpg"; %>
+
 <div class="properties">
   <div class="row">
-    <% properties.forEach(function(property, index){ %>
-      <%
+    <% properties.forEach(function(property, index){
+
       var imageString = [];
       var urls = [];
       if(property.image){
@@ -26,26 +32,75 @@
         }
       }
       %>
-
-          <div class="card card_style">
-            <img class="card-img-top" src="<%= urls[0] %>" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title"><%= property.exteriortype %></h5>
-              <small class=""> <strong> <%= property.city %> <b>|</b> <%= property.stname %> <b>|</b> <%= property.community %></strong> </small>
+        <div class="card_style">
+          <div class="card">
+            <div class="card-img-top">
+              <div id="carouselExampleIndicators<%= index %>" class="carousel slide">
+              <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators<%= index %>" data-slide-to="0"></li>
+                <li data-target="#carouselExampleIndicators<%= index %>" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators<%= index %>" data-slide-to="2"></li>
+                <li data-target="#carouselExampleIndicators<%= index %>" data-slide-to="3"></li>
+                <li data-target="#carouselExampleIndicators<%= index %>" data-slide-to="4"></li>
+              </ol>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <% if(urls[0]){ %>
+                    <img src="<%= urls[0] %>" class="d-block w-100" alt="No Image">
+                  <% }else{ %>
+                    <img src="<%= placeholder1 %>" class="d-block w-100" alt="No Image">
+                  <% } %>
+                </div>
+                <div class="carousel-item">
+                  <% if(urls[1]){ %>
+                    <img src="<%= urls[1] %>" class="d-block w-100" alt="No Image">
+                  <% }else{ %>
+                    <img src="<%= placeholder2 %>" class="d-block w-100" alt="No Image">
+                  <% } %>
+                </div>
+                <div class="carousel-item">
+                  <% if(urls[2]){ %>
+                    <img src="<%= urls[2] %>" class="d-block w-100" alt="No Image">
+                  <% }else{ %>
+                    <img src="<%= placeholder3 %>" class="d-block w-100" alt="No Image">
+                  <% } %>
+                </div>
+                <div class="carousel-item">
+                  <% if(urls[3]){ %>
+                    <img src="<%= urls[3] %>" class="d-block w-100" alt="No Image">
+                  <% }else{ %>
+                    <img src="<%= placeholder4 %>" class="d-block w-100" alt="No Image">
+                  <% } %>
+                </div>
+                <div class="carousel-item">
+                  <% if(urls[4]){ %>
+                    <img src="<%= urls[4] %>" class="d-block w-100" alt="No Image">
+                  <% }else{ %>
+                    <img src="<%= placeholder5 %>" class="d-block w-100" alt="No Image">
+                  <% } %>
+                </div>
+              </div>
+              <a class="carousel-control-prev" href="#carouselExampleIndicators<%= index %>" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleIndicators<%= index %>" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
             </div>
-            <div class="card-body">
-              <a href="/properties/<%= property._id %>"><i class="fas fa-eye"></i></a>
-              <a href="#" class="card-link">Gallery</a>
-              <a href="#" class="card-link">Contact a Realtor</a>
             </div>
+            <% include partials/show %>
           </div>
-      <% }); %>
+        </div>
+      <% }) %>
   </div>
   <div class="properties_error">
     <% if(noMatch !== null) { %>
       <h4><%= noMatch %> </h4>
       <% } %>
+      <button type="button" name="button" class="btn btn-post"><a href="/">Search</a></button>
+      <button type="button" name="button" class="btn btn-post"><a href="/bdrealtors">Get help</a></button>
   </div>
 </div>
-
 <% include partials/footer %>

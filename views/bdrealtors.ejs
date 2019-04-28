@@ -5,7 +5,7 @@
 <div class="properties">
   <div class="row">
     <% for(var i = 0; i < users.length; i++ ){ %>
-          <div class="card col-sm-4 card_style" style="width: 12rem;">
+          <div class="card card_style card_style-image">
             <%
             var image ;
             if(users[i] == users[2]){
@@ -13,16 +13,11 @@
             }else{
               image = "https://scontent.fyyz1-1.fna.fbcdn.net/v/t31.0-8/1237384_581574738565526_531009304_o.jpg?_nc_cat=110&_nc_ht=scontent.fyyz1-1.fna&oh=ed04e4678788bb9d1e3009c430576cae&oe=5D3E3ADE";
             } %>
-            <img class="card-img-top realtor_image" src="<%= image %>" alt="Card image cap">
+            <img class="card-img-top" src="<%= image %>" alt="Card image cap">
             <div class="card-body">
-              <h5 class="card-title"><%= users[i].username %></h5>
-              <small class=""> <strong> <%= users[i].city %> | <%= users[i].division %> </strong> </small>
-            </div>
-            <ul class="list-group list-group-flush">
-              <small> <li class="list-group-item"> <%= users[i].brokerage %></small>
-            </ul>
-            <div class="card-body">
-              <a href="#" class="card-link">Contact: <%= users[i].phone %> </a>
+              <h5 class="card-title"><%= users[i].username %>,<small class=""> <strong> <%= users[i].city %> </strong> </small></h5>
+                <small> <li class="list-group-item"> <b><%= users[i].brokerage %></b> </small><br>
+                <a href="#" class="card-link"> <small><b>Phone:</b> <%= users[i].phone %></small> </a>
             </div>
           </div>
       <% } %>
@@ -30,6 +25,7 @@
   <div class="properties_error">
     <% if(noMatch !== null) { %>
       <h4><%= noMatch %> </h4>
+      <button type="button" name="button" class="btn"><a href="/">Back</a></button>
       <% } %>
   </div>
 </div>

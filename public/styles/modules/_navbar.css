@@ -13,6 +13,7 @@
     text-align: center;
     border-left: 1px solid #999;
     border-right: 1px solid #999;
+    font-size: 1.3rem;
     span{
         a:link, a:visited {
           color: #000;
@@ -40,7 +41,7 @@
     max-width: 100%;
     padding: .8rem 0;
     div{
-      font-size: .65rem;
+      font-size: .9rem;
     }
   }
 }
@@ -49,7 +50,7 @@
 @media all and (max-width: 1020px) and (min-width: 768px) {
   .navbar{
     max-width: 100%;
-    padding: .8rem 0;
+    padding: 1rem 0;
   }
 }
 /* For regular Laptop and desktop screens*/

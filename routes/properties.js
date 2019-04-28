@@ -68,7 +68,7 @@ router.get("/properties", function(req, res){
            console.log(err);
          }else{
            if(result.length < 1){
-             var noMatch = "You must select a search criteria to a filtered listing. Please try again";
+             var noMatch = "You must select a search criteria to get a filtered listing. Please try again";
            }else if(minprice && maxprice){
                MongoClient.connect('mongodb://mls_app:543TWOone@ds035693.mlab.com:35693/mls', { useNewUrlParser: true }, function(err, client){
                if (err) throw err
@@ -78,7 +78,7 @@ router.get("/properties", function(req, res){
                     console.log(err);
                   }else{
                     if(result.length < 1){
-                      var noMatch = "You must select a search criteria to a filtered listing. Please try again";
+                      var noMatch = "You must select a search criteria to get a filtered listing. Please try again";
                     }
                     res.render("properties", {properties: result , noMatch: noMatch});
                   }
@@ -97,7 +97,7 @@ router.get("/properties", function(req, res){
        db.collection('listings').find({listprice: { $gte: minprice, $lte: maxprice }}).toArray(function (err, result) {
          if (err) throw err
          if(result.length < 1){
-           var noMatch = "You must select a search criteria to a filtered listing. Please try again";
+           var noMatch = "You must select a search criteria to get a filtered listing. Please try again";
          }
          res.render("properties", {properties: result , noMatch: noMatch});
        })
@@ -109,12 +109,27 @@ router.get("/properties", function(req, res){
      db.collection('listings').find().toArray(function (err, result) {
        if (err) throw err
        if(result.length < 1){
-         var noMatch = "You must select a search criteria to a filtered listing. Please try again";
+         var noMatch = "You must select a search criteria to get a filtered listing. Please try again";
        }
        res.render("properties", {properties: result , noMatch: noMatch});
      })
   })
 }
+});
+
+router.get("/properties/:id", function(req, res){
+  var id = req.params.id;
+  MongoClient.connect('mongodb://mls_app:543TWOone@ds035693.mlab.com:35693/mls', { useNewUrlParser: true }, function(err, client){
+  if (err) throw err
+   var db = client.db('mls')
+   db.collection('listings').find({_id:id},function (err, result) {
+     if (err) throw err
+     if(result.length < 1){
+       var noMatch = "You must select a search criteria to get a filtered listing. Please try again";
+     }
+     res.render("show", {properties: result , noMatch: noMatch});
+   })
+})
 });
 
 

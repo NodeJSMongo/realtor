@@ -5,6 +5,7 @@
 
 
 .card_style{
+  position: relative;
   margin: .5rem 0;
   max-width: 24%;
   margin-left: auto;
@@ -13,25 +14,33 @@
     height: 200px;
     margin: auto;
   }
+  &-image{
+   max-width: 20%;
+   img{
+     height: 220px;
+     margin: auto;
+   }
+  }
 }
 
+
 /* For small screens like mobile */
-@media all and (max-width: 412px) and (min-width: 200px) {
+@media all and (max-width: 512px) and (min-width: 200px) {
   .row{
-    max-width: 98%;
-    margin-left: 2%;
+    max-width: 90%;
+    margin-left: 5%;
   }
   .card_style{
-    margin: .5rem 0 .5rem .5rem;
-    max-width: 45%;
+    margin: .5rem 0 .5rem 0;
+    max-width: 100%;
     img{
-      height: 120px;
+      height: 270px;
     }
   }
 }
 
 /* For small screens like mobile */
-@media all and (max-width: 767px) and (min-width: 413px) {
+@media all and (max-width: 767px) and (min-width: 513px) {
   .row{
     max-width: 97%;
     margin-left: 3%;
@@ -40,7 +49,7 @@
     margin: .5rem 0 .5rem .5rem;
     max-width: 45%;
     img{
-      height: 120px;
+      height: 260px;
     }
   }
 }
@@ -55,7 +64,7 @@
     margin: .5rem 0 .5rem .5rem;
     max-width: 32%;
     img{
-      height: 150px;
+      height: 260px;
     }
   }
 }
@@ -69,7 +78,7 @@
       margin: .5rem 0 .5rem .5rem;
       max-width: 30%;
       img{
-        height: 180px;
+        height: 260px;
       }
   }
 }

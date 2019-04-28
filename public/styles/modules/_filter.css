@@ -15,7 +15,8 @@
 /* For small screens like mobile */
 @media all and (max-width: 767px) and (min-width: 200px) {
   .filterNav{
-    margin-left: 65%;
+    max-width: 20%;
+    margin-left: 40%;
     padding: .3rem 0 .3rem 0;
   }
 }
