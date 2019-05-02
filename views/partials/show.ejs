@@ -1,3 +1,26 @@
+<% if(property.listprice){
+  var toformat = property.listprice;
+  function numberWithCommas(toformat) {
+      return toformat.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+} %>
+
+  <div class="quick_value">
+    <div class="">
+      <div><i class="fas fa-coins"></i><br>Tk. <%= numberWithCommas(property.listprice); %></div>
+  <% if(property.bedroom || property.washroom || property.measurement){ %>
+    <div>  <i class="fas fa-bed"></i> <br><%=  property.bedroom %> </div>
+    <div>  <i class="fas fa-bath"></i> <br><%=  property.washroom %> </div>
+    <div>  <i class="fas fa-vector-square"></i> <br> <%=  numberWithCommas(property.measurement); %> <small>Sq.Ft</small></div>
+
+  <%  }else if(property.katha || property.decimal){ %>
+    <div>  <i class="fas fa-vector-square"></i><br>
+        <%=  property.katha %> <small>Katha</small>/
+        <%=  property.katha %> <small>Decimal</small> </div>
+    <% } %>
+      </div>
+  </div>
+
   <div class="w3-bar w3-black">
     <button class="w3-bar-item w3-button" onclick="openCity('London<%= index %>')"> <small>Details</small></button>
     <button class="w3-bar-item w3-button" onclick="openCity('Paris<%= index %>')"> <small>Comments</small> </button>
@@ -7,24 +30,37 @@
   <div id="London<%= index %>" class="w3-container w3-display-container city" style="display:none; padding:.2rem 0 .2rem .5rem;">
     <span onclick="this.parentElement.style.display='none'"
     class="w3-button w3-large w3-display-topright">&times;</span>
-    <small><b>Location:</b>  <%=property.area %> , <%=property.city %></small> <br>
-    <small><b>Property type:</b>  <%=property.exteriortype %> , <%=property.propertyclass %></small> <br>
-    <small><b>Property For: </b>  <%=property.sale %></small> <br>
-    <small><b>Asking price: </b>
+
+    <div class=" details_tab">
+      <div class="">
+        <div class=""><small><b>Location:</b>  <%=property.area %> , <%=property.city %></small></div>
+        <div class=""><small><b>Property type:</b>  <%=property.exteriortype %> , <%=property.propertyclass %></small></div>
+      </div>
+      <div class="">
+        <div class=""><small><b>Property For: </b>  <%=property.sale %></small></div>
+        <div class="">
+          <small>
+            <b>Asking price: </b>
               <%
               if( property.originalprice === undefined){
                 %>
                 Tk.<%= property.listprice %>/-
               <% }else{ %>
                 Tk.<%= property.originalprice %>/-
-              <% } %></small>
+              <% } %>
+            </small>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div id="Paris<%= index %>" class="w3-container w3-display-container city" style="display:none; padding:.2rem 0 .2rem .5rem;">
     <span onclick="this.parentElement.style.display='none'"
     class="w3-button w3-large w3-display-topright">&times;</span>
 
-    <small><b>Commons: </b>  <%=property.remarkforclients %></small>
+    <div class="" style="padding:.5rem 0;">
+      <small><b>Commons: </b>  <%=property.remarkforclients %></small>
+    </div>
   </div>
 
   <div id="Tokyo<%= index %>" class="w3-container w3-display-container city" style="display:none; padding:.2rem 0 .2rem .5rem;">

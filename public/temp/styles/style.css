@@ -353,8 +353,9 @@ html , body{
   width: 100%;
   letter-spacing: 0.05em;
   line-height: 1.2;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Roboto Mono', monospace;
   margin: 0;
+  color: #333;
   background-color: #f0f5f5;
   overflow-x: hidden;
 }
@@ -437,7 +438,6 @@ table td {
   margin: 1px auto;
   color: #000;
   letter-spacing: 0.05em;
-  font-family: 'Raleway', sans-serif;
   font-weight: 400;
   font-size-adjust: 100%;
   font-size: 1rem;
@@ -547,6 +547,35 @@ table td {
 .tabPanel_com{
   background-color:  #23a1c0;
 }
+
+.quick_value{
+  max-width: 100%;
+  margin: auto;
+}
+
+.quick_value div{
+    display: inline-block;
+    text-align: center;
+    font-family: Raleway;
+  }
+
+.quick_value div div{
+      padding: .5rem .2rem;
+      text-align: center;
+    }
+
+.quick_value div div i{
+        padding: 0 .5rem .5rem .5rem;
+        color: #777;
+      }
+
+.details_tab div div{
+      padding: .5rem  0;
+    }
+
+.details_tab div div:nth-of-type(odd){
+      background-color: #eee;
+    }
 
 /* For small screens like mobile */
 
