@@ -4,11 +4,14 @@
   height: auto;
   margin-left: auto;
   margin-right: auto;
+  background-color: rgba( 0, 0, 0, .7);
 }
 .learnmore_slider{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  height: 40vh;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height:350px;
+  width: 50%;
 }
 
 .learnmore_text{
@@ -17,8 +20,9 @@
   max-width: 50%;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 5rem;
+  color: #fff;
   font-weight: bolder;
+  background-color: rgba(0,0,0, .6);
 }
 
 /* For small screens like mobile */
@@ -27,12 +31,12 @@
     max-width: 100%;
   }
   .learnmore_slider{
-    height: 270px;
+    height:270px;
+    width: 100%;
   }
   .learnmore_text{
-    max-width: 80%;
-    font-size: .9rem;
-    margin-top: 1rem;
+    max-width: 90%;
+    font-size: 1.2rem;
   }
 }
 
@@ -42,12 +46,12 @@
     max-width: 100%;
   }
   .learnmore_slider{
-    height: 320px;
+    height:270px;
+    width: 75%;
   }
   .learnmore_text{
-    font-size: 1.5rem;
-    margin-top: 2rem;
-    max-width: 70%;
+    font-size: 1.6rem;
+    max-width: 80%;
   }
 }
 /* For regular Laptop and desktop screens*/
@@ -56,6 +60,6 @@
     max-width: 100%;
   }
   .learnmore_slider{
-    height: auto;
+    height:350px;
   }
 }

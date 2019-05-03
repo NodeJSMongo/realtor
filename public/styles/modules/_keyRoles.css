@@ -33,9 +33,10 @@
 }
 .paragraph1{
   margin: 0 2rem;
-  font-size: 1rem;
+  font-size: .8rem;
   font-family: 'Raleway', sans-serif;
   color: #fff;
+  font-weight: 100;
 }
 
 .title1{
@@ -100,7 +101,7 @@
   .paragraph2 , .paragraph1{
     margin: 0 .5rem;
     font-size: .8rem;
-    font-weight: bold;
+    font-weight: 100;
   }
 }
 
@@ -134,7 +135,7 @@
   .paragraph2 , .paragraph1{
     margin: 0 .5rem;
     font-size: .8rem;
-    font-weight: bold;
+    font-weight: 100;
   }
 }
 /* For regular Laptop and desktop screens*/
@@ -145,7 +146,7 @@
   .paragraph2 , .paragraph1{
     margin: 0 .9rem;
     font-size: 1rem;
-    font-weight: bold;
+    font-weight: 100;
     line-height: 1.3rem;
     letter-spacing: .1rem;
   }
