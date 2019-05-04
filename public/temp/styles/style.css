@@ -718,13 +718,13 @@ select {
     padding: 1.5rem 0;
   }
 
-.headerNav span{
-      color: #fff;
-      margin-left: 8%;
-      margin-right: 10%;
-      font-weight: bold;
-      font-size: 1.3rem;
-    }
+.headerNav div div span{
+          color: #fff;
+          margin-left: 8%;
+          margin-right: 10%;
+          font-weight: bold;
+          font-size: 1.3rem;
+        }
 
 .subHeader{
       display: none;
@@ -1745,7 +1745,7 @@ select {
 
 .navbar{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   border-bottom:3px #eee solid;
   position: relative;
   max-width: 85%;
@@ -1767,6 +1767,7 @@ select {
           font-weight: 400;
           text-align: center;
           text-decoration: none;
+          text-transform: uppercase;
         }
 
 .navbar div span a:hover, .navbar div span a:active {
@@ -1791,7 +1792,8 @@ select {
     padding: .8rem 0;
   }
     .navbar div{
-      font-size: .9rem;
+      font-size: .6rem;
+      font-weight: bold;
     }
 }
 
