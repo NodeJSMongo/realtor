@@ -192,10 +192,12 @@ table td {
 .quick_value{
   max-width: 100%;
   margin: auto;
+  font-size: .8rem;
   div{
     display: inline-block;
     text-align: center;
-    font-family: Raleway;
+    font-family: Roboto;
+    color: #444;
     div{
       padding: .5rem .2rem;
       text-align: center;

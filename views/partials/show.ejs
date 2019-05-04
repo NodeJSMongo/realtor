@@ -16,7 +16,7 @@
   <%  }else if(property.katha || property.decimal){ %>
     <div>  <i class="fas fa-vector-square"></i><br>
         <%=  property.katha %> <small>Katha</small>/
-        <%=  property.katha %> <small>Decimal</small> </div>
+        <%=  property.decimal %> <small>Decimal</small> </div>
     <% } %>
       </div>
   </div>
@@ -42,7 +42,7 @@
           <small>
             <b>Asking price: </b>
               <%
-              if( property.originalprice === undefined){
+              if( (property.originalprice === null)|| (property.originalprice === undefined)){
                 %>
                 Tk.<%= property.listprice %>/-
               <% }else{ %>

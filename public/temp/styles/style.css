@@ -551,12 +551,14 @@ table td {
 .quick_value{
   max-width: 100%;
   margin: auto;
+  font-size: .8rem;
 }
 
 .quick_value div{
     display: inline-block;
     text-align: center;
-    font-family: Raleway;
+    font-family: Roboto;
+    color: #444;
   }
 
 .quick_value div div{
@@ -719,6 +721,7 @@ select {
 .headerNav span{
       color: #fff;
       margin-left: 8%;
+      margin-right: 10%;
       font-weight: bold;
       font-size: 1.3rem;
     }
@@ -1742,7 +1745,7 @@ select {
 
 .navbar{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   border-bottom:3px #eee solid;
   position: relative;
   max-width: 85%;
@@ -1756,12 +1759,12 @@ select {
     text-align: center;
     border-left: 1px solid #999;
     border-right: 1px solid #999;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
 
 .navbar div span a:link, .navbar div span a:visited {
           color: #000;
-          font-weight: bolder;
+          font-weight: 400;
           text-align: center;
           text-decoration: none;
         }
