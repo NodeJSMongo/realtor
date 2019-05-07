@@ -9,7 +9,7 @@
             <%
             var image ;
             if(users[i] == users[2]){
-              image = "https://scontent.fyyz1-1.fna.fbcdn.net/v/t1.0-9/10314592_700130673376598_7054400586872462732_n.jpg?_nc_cat=101&_nc_ht=scontent.fyyz1-1.fna&oh=3e2d5345bb4fa463f9bf5e891fc81c5a&oe=5D4C23FB";
+              image = "https://scontent.fyyz1-1.fna.fbcdn.net/v/t31.0-8/1237384_581574738565526_531009304_o.jpg?_nc_cat=110&_nc_ht=scontent.fyyz1-1.fna&oh=ed04e4678788bb9d1e3009c430576cae&oe=5D3E3ADE";
             }else{
               image = "https://scontent.fyyz1-1.fna.fbcdn.net/v/t31.0-8/1237384_581574738565526_531009304_o.jpg?_nc_cat=110&_nc_ht=scontent.fyyz1-1.fna&oh=ed04e4678788bb9d1e3009c430576cae&oe=5D3E3ADE";
             } %>
@@ -17,7 +17,8 @@
             <div class="card-body">
               <h5 class="card-title"><%= users[i].username %>,<small class=""> <strong> <%= users[i].city %> </strong> </small></h5>
                 <small> <li class="list-group-item"> <b><%= users[i].brokerage %></b> </small><br>
-                <a href="#" class="card-link"> <small><b>Phone:</b> <%= users[i].phone %></small> </a>
+                <a href="#" class="card-link"> <small><b>Phone:</b> <%= users[i].phone %></small> </a> <br>
+                <a href="http://kb.bdrealestates.com/contact-with-rafi/" class="card-link"> <small> <b> Send a Message</b></small> </a>
             </div>
           </div>
       <% } %>
